@@ -1,5 +1,8 @@
 # RepEasy
 
+INSTALADORES
+  https://www.sourcetreeapp.com/
+
 REGRAS
 
 * Baixe o projeto e mude o branch para Dev
