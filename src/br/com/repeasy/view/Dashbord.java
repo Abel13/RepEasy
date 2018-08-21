@@ -29,10 +29,16 @@ public class Dashbord extends javax.swing.JFrame {
 
         pnl_dashb = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        login = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
         loadin = new javax.swing.JPanel();
         img_loader = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        login = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,6 +46,86 @@ public class Dashbord extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new java.awt.CardLayout());
+
+        login.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Email :");
+
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Password :");
+
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
+        jPasswordField1.setForeground(new java.awt.Color(0, 0, 0));
+        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.setBorder(null);
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+
+        jSeparator1.setBackground(new java.awt.Color(0, 255, 255));
+        jSeparator1.setForeground(new java.awt.Color(102, 255, 255));
+
+        jSeparator2.setBackground(new java.awt.Color(51, 255, 255));
+        jSeparator2.setForeground(new java.awt.Color(51, 255, 255));
+
+        javax.swing.GroupLayout loginLayout = new javax.swing.GroupLayout(login);
+        login.setLayout(loginLayout);
+        loginLayout.setHorizontalGroup(
+            loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginLayout.createSequentialGroup()
+                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginLayout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addComponent(jLabel2)
+                        .addGap(101, 101, 101))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3)
+                        .addGap(89, 89, 89)))
+                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        loginLayout.setVerticalGroup(
+            loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginLayout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(loginLayout.createSequentialGroup()
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(68, 68, 68)
+                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(209, Short.MAX_VALUE))
+                    .addGroup(loginLayout.createSequentialGroup()
+                        .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+
+        jPanel1.add(login, "card2");
 
         loadin.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -75,21 +161,6 @@ public class Dashbord extends javax.swing.JFrame {
 
         jPanel1.add(loadin, "card3");
 
-        login.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout loginLayout = new javax.swing.GroupLayout(login);
-        login.setLayout(loginLayout);
-        loginLayout.setHorizontalGroup(
-            loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 858, Short.MAX_VALUE)
-        );
-        loginLayout.setVerticalGroup(
-            loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 533, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(login, "card2");
-
         javax.swing.GroupLayout pnl_dashbLayout = new javax.swing.GroupLayout(pnl_dashb);
         pnl_dashb.setLayout(pnl_dashbLayout);
         pnl_dashbLayout.setHorizontalGroup(
@@ -119,6 +190,14 @@ public class Dashbord extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,7 +237,13 @@ public class Dashbord extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel img_loader;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel loadin;
     private javax.swing.JPanel login;
     private javax.swing.JPanel pnl_dashb;
