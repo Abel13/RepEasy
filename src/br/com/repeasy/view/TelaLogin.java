@@ -5,6 +5,9 @@
  */
 package br.com.repeasy.view;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 /**
  *
  * @author gardh
@@ -252,6 +255,15 @@ public class TelaLogin extends javax.swing.JFrame {
         
         loadin.show();
         login.hide();
+        
+        // timer de 3segundos pra mudar de tela
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+               login.show();
+               loadin.hide();
+            }
+        }, 1000 * 3);
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
