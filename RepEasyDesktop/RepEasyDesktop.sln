@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepEasyDesktop", "RepEasyDesktop\RepEasyDesktop.csproj", "{13105C41-3B7C-4138-AE4A-6D071853BD5B}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RepEasyDatabase", "RepEasyDatabase\RepEasyDatabase.sqlproj", "{F89B4F25-C369-4180-81A6-D3E01EC0BD6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,12 @@ Global
 		{13105C41-3B7C-4138-AE4A-6D071853BD5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13105C41-3B7C-4138-AE4A-6D071853BD5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13105C41-3B7C-4138-AE4A-6D071853BD5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F89B4F25-C369-4180-81A6-D3E01EC0BD6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F89B4F25-C369-4180-81A6-D3E01EC0BD6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F89B4F25-C369-4180-81A6-D3E01EC0BD6B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F89B4F25-C369-4180-81A6-D3E01EC0BD6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F89B4F25-C369-4180-81A6-D3E01EC0BD6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F89B4F25-C369-4180-81A6-D3E01EC0BD6B}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
