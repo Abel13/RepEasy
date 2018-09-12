@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="Cadastro" Height="450" Width="400">
     <Grid>
-        
+        <StackPanel VerticalAlignment="Center">
+            <TextBox Width="200" Margin="5"/>
+            <TextBox Width="200" Margin="5"/>
+            <TextBox Width="200" Margin="5"/>
+            <TextBox Width="200" Margin="5"/>
+            <Button x:Name="ButtonSalvar" Width="100" Content="SALVAR" Height="20" VerticalAlignment="Top" Click="ButtonSalvar_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

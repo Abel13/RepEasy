@@ -20,11 +20,16 @@ namespace RepEasyDesktop
     /// </summary>
     public partial class WindowCadastro : Window
     {
-        ControlCadastroMorador controlCadastroMorador = new ControlCadastroMorador();
+        ControlCadastroMorador controlCadastroMorador;
         public WindowCadastro()
         {
             InitializeComponent();
+            controlCadastroMorador = new ControlCadastroMorador();
+        }
 
+        private void ButtonSalvar_Click(object sender, RoutedEventArgs e)
+        {
+            //Validar dados
             controlCadastroMorador.Salvar("Abel", "08748424684", "1234", DateTime.Now);
         }
     }
