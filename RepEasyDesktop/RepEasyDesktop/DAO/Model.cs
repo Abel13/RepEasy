@@ -12,21 +12,22 @@ namespace RepEasyDesktop.DAO
         {
         }
 
-        public virtual DbSet<Morador> Moradors { get; set; }
+        public virtual DbSet<Morador> Moradores { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Morador>()
-                .Property(e => e.nome)
+                .Property(e => e.Nome)
                 .IsFixedLength()
                 .IsUnicode(false);
 
             modelBuilder.Entity<Morador>()
-                .Property(e => e.cpf)
-                .IsFixedLength();
+                .Property(e => e.Cpf)
+                .IsFixedLength()
+                .IsUnicode(false);
 
             modelBuilder.Entity<Morador>()
-                .Property(e => e.senha)
+                .Property(e => e.Senha)
                 .IsFixedLength()
                 .IsUnicode(false);
         }

@@ -9,22 +9,21 @@ namespace RepEasyDesktop.DAO
     [Table("Morador")]
     public partial class Morador
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string nome { get; set; }
+        public string Nome { get; set; }
 
         [Required]
         [StringLength(11)]
-        public string cpf { get; set; }
+        public string Cpf { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string senha { get; set; }
+        [StringLength(100)]
+        public string Senha { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime data_nascimento { get; set; }
+        public DateTime DataNascimento { get; set; }
     }
 }

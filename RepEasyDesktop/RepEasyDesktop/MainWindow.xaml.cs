@@ -23,6 +23,9 @@ namespace RepEasyDesktop
         public MainWindow()
         {
             InitializeComponent();
+
+            WindowCadastro cadastro = new WindowCadastro();
+            cadastro.Show();
         }
     }
 }

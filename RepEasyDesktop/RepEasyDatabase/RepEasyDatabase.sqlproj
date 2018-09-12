@@ -61,4 +61,10 @@
   <ItemGroup>
     <Build Include="Morador.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="SqlSchemaCompare.scmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="RepEasyDatabase.refactorlog" />
+  </ItemGroup>
 </Project>
