@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RepEasyDesktop.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,9 +24,6 @@ namespace RepEasyDesktop
         public MainWindow()
         {
             InitializeComponent();
-
-            WindowCadastro cadastro = new WindowCadastro();
-            cadastro.ShowDialog();
         }
     }
 }

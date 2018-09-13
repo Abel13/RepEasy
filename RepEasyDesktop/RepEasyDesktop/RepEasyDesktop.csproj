@@ -65,12 +65,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Control\ControlCadastroMorador.cs" />
-    <Compile Include="DAO\Model.cs" />
-    <Compile Include="DAO\Morador.cs" />
-    <Compile Include="WindowCadastro.xaml.cs">
+    <Compile Include="Control\ControlLogin.cs" />
+    <Compile Include="Model\Model.cs" />
+    <Compile Include="Model\Morador.cs" />
+    <Compile Include="View\WindowLogin.xaml.cs">
+      <DependentUpon>WindowLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WindowCadastro.xaml.cs">
       <DependentUpon>WindowCadastro.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -78,11 +82,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="WindowCadastro.xaml">
+    <Page Include="View\WindowLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WindowCadastro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,5 +122,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

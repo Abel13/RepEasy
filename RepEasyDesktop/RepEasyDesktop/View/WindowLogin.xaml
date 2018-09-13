@@ -1,0 +1,16 @@
+﻿<Window x:Class="RepEasyDesktop.View.WindowLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RepEasyDesktop.View"
+        mc:Ignorable="d"
+        Title="LOGIN" Height="450" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <TextBox x:Name="TextBoxCpf" Width="200" Margin="5"/>
+            <PasswordBox x:Name="TextBoxSenha" Width="200" Margin="5"/>
+            <Button x:Name="ButtonEntrar" Content="ENTRAR" Margin="147,5" Click="ButtonEntrar_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
