@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RepEasyDesktop.View"
         mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="LOGIN" Height="450" Width="400" ResizeMode="NoResize">
     <Grid>
         <StackPanel VerticalAlignment="Center">
-            <TextBox x:Name="TextBoxCpf" Width="200" Margin="5"/>
-            <PasswordBox x:Name="TextBoxSenha" Width="200" Margin="5"/>
+            <TextBox x:Name="TextBoxCpf" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5"/>
+            <PasswordBox x:Name="TextBoxSenha" materialDesign:HintAssist.Hint="SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5"/>
             <Button x:Name="ButtonEntrar" Content="ENTRAR" Margin="147,5" Click="ButtonEntrar_Click" />
         </StackPanel>
     </Grid>

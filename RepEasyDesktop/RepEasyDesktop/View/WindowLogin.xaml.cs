@@ -32,10 +32,10 @@ namespace RepEasyDesktop.View
             if (String.IsNullOrEmpty(TextBoxCpf.Text))
                 return;
 
-            if (String.IsNullOrEmpty(TextBoxSenha.Text))
+            if (String.IsNullOrEmpty(TextBoxSenha.Password))
                 return;
 
-            if (control.Logar(TextBoxCpf.Text, TextBoxSenha.Text))
+            if (control.Logar(TextBoxCpf.Text, TextBoxSenha.Password))
             {
                 MainWindow main = new MainWindow();
                 main.Show();
