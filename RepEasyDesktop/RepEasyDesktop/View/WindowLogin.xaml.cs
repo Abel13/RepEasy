@@ -29,11 +29,19 @@ namespace RepEasyDesktop.View
 
         private void ButtonEntrar_Click(object sender, RoutedEventArgs e)
         {
+            var messageQueue = SnackbarThree.MessageQueue;
+
             if (String.IsNullOrEmpty(TextBoxCpf.Text))
+            {
+                Task.Factory.StartNew(() => messageQueue.Enqueue("CPF não informado."));
                 return;
+            }
 
             if (String.IsNullOrEmpty(TextBoxSenha.Password))
+            {
+                Task.Factory.StartNew(() => messageQueue.Enqueue("Senha não informada."));
                 return;
+            }
 
             if (control.Logar(TextBoxCpf.Text, TextBoxSenha.Password))
             {
@@ -43,7 +51,7 @@ namespace RepEasyDesktop.View
             }
             else
             {
-                MessageBox.Show("CPF ou senha incorreto");
+                Task.Factory.StartNew(() => messageQueue.Enqueue("CPF ou senha incorreto"));
             }
                 
         }

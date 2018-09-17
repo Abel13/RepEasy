@@ -13,5 +13,7 @@
             <PasswordBox x:Name="TextBoxSenha" materialDesign:HintAssist.Hint="SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5"/>
             <Button x:Name="ButtonEntrar" Content="ENTRAR" Margin="147,5" Click="ButtonEntrar_Click" />
         </StackPanel>
+        <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}"
+                                                x:Name="SnackbarThree" Margin="15"/>
     </Grid>
 </Window>
