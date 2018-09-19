@@ -60,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Morador.sql" />
+    <Build Include="Despesa.sql" />
+    <Build Include="DespesaMorador.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SqlSchemaCompare.scmp" />
