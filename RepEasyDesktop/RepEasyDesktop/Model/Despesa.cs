@@ -6,37 +6,28 @@ namespace RepEasyDesktop.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Morador")]
-    public partial class Morador
+    [Table("Despesa")]
+    public partial class Despesa
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Morador()
+        public Despesa()
         {
             MoradorDespesa = new HashSet<MoradorDespesa>();
-            Tarefa = new HashSet<Tarefa>();
+            Item = new HashSet<Item>();
         }
 
         public int Id { get; set; }
 
         [Required]
-        [StringLength(100)]
-        public string Nome { get; set; }
+        [StringLength(50)]
+        public string Descricao { get; set; }
 
-        [Required]
-        [StringLength(11)]
-        public string Cpf { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        public string Senha { get; set; }
-
-        [Column(TypeName = "date")]
-        public DateTime DataNascimento { get; set; }
+        public decimal Valor { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MoradorDespesa> MoradorDespesa { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tarefa> Tarefa { get; set; }
+        public virtual ICollection<Item> Item { get; set; }
     }
 }
