@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -33,12 +34,14 @@ namespace RepEasyDesktop.View
 
             if (String.IsNullOrEmpty(TextBoxCpf.Text))
             {
+                TextBoxCpf.Focus();
                 Task.Factory.StartNew(() => messageQueue.Enqueue("CPF não informado."));
                 return;
             }
 
             if (String.IsNullOrEmpty(TextBoxSenha.Password))
             {
+                TextBoxSenha.Focus();
                 Task.Factory.StartNew(() => messageQueue.Enqueue("Senha não informada."));
                 return;
             }
