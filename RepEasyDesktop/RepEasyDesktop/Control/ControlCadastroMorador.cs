@@ -1,4 +1,4 @@
-﻿using RepEasyDesktop.DAO;
+﻿using RepEasyDesktop.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +12,7 @@ namespace RepEasyDesktop.Control
         public void Salvar(string nome, string cpf, string senha, DateTime data)
         {
             Morador morador = new Morador() { Nome = nome, Cpf = cpf, Senha = senha, DataNascimento = data };
-
-            Model m = new Model();
+            Model.Model m = new Model.Model();
 
             m.Moradores.Add(morador);
             m.SaveChanges();

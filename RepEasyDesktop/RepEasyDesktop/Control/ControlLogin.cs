@@ -1,4 +1,4 @@
-﻿using RepEasyDesktop.DAO;
+﻿using RepEasyDesktop.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +9,10 @@ namespace RepEasyDesktop.Control
 {
     public class ControlLogin
     {
-        Model context;
+        Model.Model context;
         public ControlLogin()
         {
-            context = new Model();
+            context = new Model.Model();
         }
         public bool Logar(string cpf, string senha)
         {

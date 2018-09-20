@@ -72,8 +72,14 @@
     </ApplicationDefinition>
     <Compile Include="Control\ControlCadastroMorador.cs" />
     <Compile Include="Control\ControlLogin.cs" />
+    <Compile Include="Model\Despesa.cs" />
+    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\ItemDespesa.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Morador.cs" />
+    <Compile Include="Model\MoradorDespesa.cs" />
+    <Compile Include="Model\MoradorTarefa.cs" />
+    <Compile Include="Model\Tarefa.cs" />
     <Compile Include="View\WindowLogin.xaml.cs">
       <DependentUpon>WindowLogin.xaml</DependentUpon>
     </Compile>
