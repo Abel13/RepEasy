@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:RepEasyDesktop.View"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="LOGIN" Height="450" Width="400" ResizeMode="NoResize">
+        Title="LOGIN" Height="450" Width="400" ResizeMode="NoResize" Background="#FF3F1C4D" Foreground="White">
     <Grid>
         <StackPanel VerticalAlignment="Center">
-            <TextBox x:Name="TextBoxCpf" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5"/>
-            <PasswordBox x:Name="TextBoxSenha" materialDesign:HintAssist.Hint="SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5"/>
+            <TextBox x:Name="TextBoxCpf" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11"/>
+            <PasswordBox x:Name="TextBoxSenha" materialDesign:HintAssist.Hint="SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25"/>
             <Button x:Name="ButtonEntrar" Content="ENTRAR" Margin="147,5" Click="ButtonEntrar_Click" />
         </StackPanel>
         <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}"
