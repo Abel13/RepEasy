@@ -72,14 +72,12 @@
     </ApplicationDefinition>
     <Compile Include="Control\ControlCadastroMorador.cs" />
     <Compile Include="Control\ControlLogin.cs" />
-    <Compile Include="Model\Despesa.cs" />
-    <Compile Include="Model\Item.cs" />
-    <Compile Include="Model\ItemDespesa.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Morador.cs" />
-    <Compile Include="Model\MoradorDespesa.cs" />
-    <Compile Include="Model\MoradorTarefa.cs" />
-    <Compile Include="Model\Tarefa.cs" />
+    <Compile Include="Model\Sessao.cs" />
+    <Compile Include="View\UserControlPerfil.xaml.cs">
+      <DependentUpon>UserControlPerfil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\WindowLogin.xaml.cs">
       <DependentUpon>WindowLogin.xaml</DependentUpon>
     </Compile>
@@ -98,6 +96,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\UserControlPerfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\WindowLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
