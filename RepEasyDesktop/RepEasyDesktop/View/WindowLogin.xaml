@@ -11,7 +11,8 @@
         <StackPanel VerticalAlignment="Center">
             <TextBox x:Name="TextBoxCpf" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11"/>
             <PasswordBox x:Name="TextBoxSenha" materialDesign:HintAssist.Hint="SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25"/>
-            <Button x:Name="ButtonEntrar" Content="ENTRAR" Margin="147,5" Click="ButtonEntrar_Click" />
+            <Label Content="CRIAR MINHA CONTA" HorizontalAlignment="Center" FontSize="10" Foreground="#FF03A9F4" MouseDown="Label_MouseDown"/>
+            <Button x:Name="ButtonEntrar" Content="ENTRAR" Margin="5" HorizontalAlignment="Center" Click="ButtonEntrar_Click" />
         </StackPanel>
         <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}"
                                                 x:Name="SnackbarThree" Margin="15"/>

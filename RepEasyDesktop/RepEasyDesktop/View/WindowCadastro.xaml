@@ -5,14 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RepEasyDesktop"
         mc:Ignorable="d"
-        Title="Cadastro" Height="450" Width="400">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Novo Morador" Height="450" Width="400" ResizeMode="NoResize" Background="#FF3F1C4D" Foreground="White">
     <Grid>
         <StackPanel VerticalAlignment="Center">
-            <TextBox Width="200" Margin="5"/>
-            <TextBox Width="200" Margin="5"/>
-            <TextBox Width="200" Margin="5"/>
-            <TextBox Width="200" Margin="5"/>
-            <Button x:Name="ButtonSalvar" Width="100" Content="SALVAR" Height="20" VerticalAlignment="Top" Click="ButtonSalvar_Click"/>
+            <TextBox x:Name="TextBoxNome" materialDesign:HintAssist.Hint="NOME" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11"/>
+            <TextBox x:Name="TextBoxCpf" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11"/>
+            <PasswordBox x:Name="TextBoxSenha" materialDesign:HintAssist.Hint="SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25"/>
+            <PasswordBox x:Name="TextBoxConfirmaSenha" materialDesign:HintAssist.Hint="CONFIRME SUA SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25"/>
+            <DatePicker x:Name="DatePickerNascimento" materialDesign:HintAssist.Hint="DATA DE NASCIMENTO" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Width="250" Margin="5"/>
+            <Button x:Name="ButtonSalvar" Content="SALVAR" Click="ButtonSalvar_Click" HorizontalAlignment="Center" Margin="5"/>
         </StackPanel>
+        <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}"
+                                                x:Name="SnackbarThree" Margin="15"/>
     </Grid>
 </Window>
