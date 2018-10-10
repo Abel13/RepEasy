@@ -7,11 +7,17 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="Dashboard"  Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" >
-    <Grid Background="#FFEEEEEE">
+    <Grid Background="#FFEEEEEE" MouseDown="grid_mouseDown">
         <StackPanel>
             <Grid Background="#FF0069C0" Height="10"/>
 
             <Grid Margin="5">
+
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock Text="Repeasy Dashboard" VerticalAlignment="Center" FontSize="25"/>
+                    
+                </StackPanel>
+                
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
                     <Button x:Name="btnAlert" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" >
                         <materialDesign:PackIcon Kind="BellOutline" />
@@ -19,11 +25,17 @@
                     <Button x:Name="btnConfig" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Margin="0 0 10 0">
                         <materialDesign:PackIcon Kind="Settings" />
                     </Button>
-                    <Button x:Name="btnFechar" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" >
+                    <Button x:Name="btnFechar" Click="btnFechar_Click" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" >
                         <materialDesign:PackIcon Kind="Power" />
                     </Button>
                 </StackPanel>
+            
             </Grid>
         </StackPanel>
+        <Grid      Width="250" Background="Black" HorizontalAlignment="Left">
+            <ListView Margin=" 0 100">
+                
+            </ListView>
+        </Grid>
     </Grid>
 </Window>

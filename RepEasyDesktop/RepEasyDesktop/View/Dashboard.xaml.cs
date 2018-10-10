@@ -23,5 +23,15 @@ namespace RepEasyDesktop.View
         {
             InitializeComponent();
         }
+
+        private void btnFechar_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void grid_mouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }
