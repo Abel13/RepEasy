@@ -14,10 +14,8 @@ namespace RepEasyDesktop.Model
 
         public virtual DbSet<Despesa> Despesas { get; set; }
         public virtual DbSet<Item> Itens { get; set; }
-        public virtual DbSet<ItemDespesa> ItensDespesas { get; set; }
         public virtual DbSet<Morador> Moradores { get; set; }
         public virtual DbSet<MoradorDespesa> MoradoresDespesas { get; set; }
-        public virtual DbSet<MoradorTarefa> MoradoresTarefas { get; set; }
         public virtual DbSet<Tarefa> Tarefas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

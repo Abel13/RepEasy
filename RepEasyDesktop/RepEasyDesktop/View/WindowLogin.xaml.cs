@@ -48,8 +48,8 @@ namespace RepEasyDesktop.View
 
             if (control.Logar(TextBoxCpf.Text, TextBoxSenha.Password))
             {
-                MainWindow main = new MainWindow();
-                main.Show();
+                Dashboard dash = new Dashboard();
+                dash.Show();
                 this.Close();
             }
             else
