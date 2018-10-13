@@ -6,15 +6,19 @@
         xmlns:local="clr-namespace:RepEasyDesktop"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Novo Morador" Height="450" Width="400" ResizeMode="NoResize" Background="#FF3F1C4D" Foreground="White">
+        Title="Novo Morador" Height="450" Width="400" ResizeMode="NoResize" Background="#FF3F1C4D" Foreground="White" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
+        <Button x:Name="ButtonBack" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" BorderBrush="{x:Null}" Background="{x:Null}" Click="ButtonBack_Click">
+            <materialDesign:PackIcon Kind="ArrowLeft"/>
+        </Button>
         <StackPanel VerticalAlignment="Center">
-            <TextBox x:Name="TextBoxNome" materialDesign:HintAssist.Hint="NOME" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11"/>
+            <TextBlock Text="NOVO MORADOR" HorizontalAlignment="Center" FontSize="25" Margin="15" Background="{x:Null}" FontWeight="Bold" Foreground="#FFFFE426"/>
+            <TextBox x:Name="TextBoxNome" materialDesign:HintAssist.Hint="NOME" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="25"/>
             <TextBox x:Name="TextBoxCpf" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11"/>
             <PasswordBox x:Name="TextBoxSenha" materialDesign:HintAssist.Hint="SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25"/>
             <PasswordBox x:Name="TextBoxConfirmaSenha" materialDesign:HintAssist.Hint="CONFIRME SUA SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25"/>
             <DatePicker x:Name="DatePickerNascimento" materialDesign:HintAssist.Hint="DATA DE NASCIMENTO" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Width="250" Margin="5"/>
-            <Button x:Name="ButtonSalvar" Content="SALVAR" Click="ButtonSalvar_Click" HorizontalAlignment="Center" Margin="5"/>
+            <Button x:Name="ButtonSalvar" Content="SALVAR" Click="ButtonSalvar_Click" HorizontalAlignment="Center" Margin="15"/>
         </StackPanel>
         <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}"
                                                 x:Name="SnackbarThree" Margin="15"/>

@@ -33,36 +33,39 @@ namespace RepEasyDesktop
             var messageQueue = SnackbarThree.MessageQueue;
 
             DateTime dataNascimento;
+            String nome = TextBoxNome.Text;
+            String cpf = TextBoxCpf.Text;
+            String senha = TextBoxSenha.Password;
 
-            if (String.IsNullOrEmpty(TextBoxNome.Text))
+            if (String.IsNullOrEmpty(nome))
             {
                 TextBoxNome.Focus();
                 Task.Factory.StartNew(() => messageQueue.Enqueue("Nome não informado."));
                 return;
             }
 
-            if (String.IsNullOrEmpty(TextBoxCpf.Text))
+            if (String.IsNullOrEmpty(cpf))
             {
                 TextBoxCpf.Focus();
                 Task.Factory.StartNew(() => messageQueue.Enqueue("CPF não informado."));
                 return;
             }
 
-            if (String.IsNullOrEmpty(TextBoxSenha.Password))
+            if (String.IsNullOrEmpty(senha))
             {
                 TextBoxSenha.Focus();
                 Task.Factory.StartNew(() => messageQueue.Enqueue("Senha não informada."));
                 return;
             }
 
-            if (String.IsNullOrEmpty(TextBoxConfirmaSenha.Password))
+            if (String.IsNullOrEmpty(TextBoxConfirmaSenha.Password) || TextBoxConfirmaSenha.Password != senha)
             {
                 TextBoxConfirmaSenha.Focus();
-                Task.Factory.StartNew(() => messageQueue.Enqueue("Confirmação de senha não informada."));
+                Task.Factory.StartNew(() => messageQueue.Enqueue("Confirmação diferente da senha informada!"));
                 return;
             }
-
-            if (DatePickerNascimento.SelectedDate.Value == null)
+            
+            if (DatePickerNascimento.SelectedDate == null)
             {
                 DatePickerNascimento.Focus();
                 Task.Factory.StartNew(() => messageQueue.Enqueue("Data de nascimento não informada."));
@@ -70,19 +73,29 @@ namespace RepEasyDesktop
             }
             else
             {
-                dataNascimento = DatePickerNascimento.SelectedDate.Value;
+                 dataNascimento = DatePickerNascimento.SelectedDate.Value;
             }
 
             if (control.Cadastrar(TextBoxNome.Text, TextBoxCpf.Text, TextBoxSenha.Password, dataNascimento))
             {
-                WindowLogin login = new WindowLogin();
-                login.Show();
-                this.Close();
+                Voltar();
             }
             else
             {
                 Task.Factory.StartNew(() => messageQueue.Enqueue("Erro no cadastro, tente novamente!"));
             }
+        }
+
+        private void Voltar()
+        {
+            WindowLogin login = new WindowLogin();
+            login.Show();
+            this.Close();
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            Voltar();
         }
     }
 }

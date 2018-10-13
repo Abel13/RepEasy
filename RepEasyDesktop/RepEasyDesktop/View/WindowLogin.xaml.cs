@@ -58,12 +58,17 @@ namespace RepEasyDesktop.View
             }
                 
         }
-
-        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        
+        private void ButtonCadastrar_Click(object sender, RoutedEventArgs e)
         {
             WindowCadastro cadastro = new WindowCadastro();
             cadastro.Show();
             this.Close();
+        }
+
+        private void ButtonClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

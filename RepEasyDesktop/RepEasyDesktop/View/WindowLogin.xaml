@@ -6,13 +6,20 @@
         xmlns:local="clr-namespace:RepEasyDesktop.View"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="LOGIN" Height="450" Width="400" ResizeMode="NoResize" Background="#FF3F1C4D" Foreground="White">
+        Title="LOGIN" Height="450" Width="400" ResizeMode="NoResize" Background="#FF3F1C4D" Foreground="White" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
+        <Button x:Name="ButtonClose" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Click="ButtonClose_Click">
+            <materialDesign:PackIcon Kind="Power"/>
+        </Button>
+
         <StackPanel VerticalAlignment="Center">
+            <Image Source="/RepEasyDesktop;component/Assets/Logo.png" Width="100" Margin="0 0 0 50"/>
             <TextBox x:Name="TextBoxCpf" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11"/>
             <PasswordBox x:Name="TextBoxSenha" materialDesign:HintAssist.Hint="SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25"/>
-            <Label Content="CRIAR MINHA CONTA" HorizontalAlignment="Center" FontSize="10" Foreground="#FF03A9F4" MouseDown="Label_MouseDown"/>
-            <Button x:Name="ButtonEntrar" Content="ENTRAR" Margin="5" HorizontalAlignment="Center" Click="ButtonEntrar_Click" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="ButtonEntrar" Content="ENTRAR" Margin="5" HorizontalAlignment="Center" Click="ButtonEntrar_Click" />
+                <Button x:Name="ButtonCadastrar" Content="CADASTRAR" Style="{StaticResource MaterialDesignFlatButton}" Click="ButtonCadastrar_Click" Margin="5 15"/>
+            </StackPanel>
         </StackPanel>
         <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}"
                                                 x:Name="SnackbarThree" Margin="15"/>
