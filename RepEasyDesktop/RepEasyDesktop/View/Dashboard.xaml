@@ -7,34 +7,70 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="Dashboard"  Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" >
-    <Grid Background="#FFEEEEEE" MouseDown="grid_mouseDown">
+    <Grid Background="#FF3F1C4D" MouseDown="grid_mouseDown">
         <StackPanel>
-            <Grid Background="#FF0069C0" Height="10"/>
+            <Grid Background="Black" Height="10"/>
 
             <Grid Margin="5">
 
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                    <TextBlock Text="Repeasy Dashboard" VerticalAlignment="Center" FontSize="25"/>
-                    
+                    <TextBlock Text="Repeasy Dashboard" VerticalAlignment="Center" FontSize="25" FontFamily="Segoe UI Black" Margin=" 20 0" Foreground="Cyan"/>
+                    <Button x:Name="btnFacebooklink" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Yellow" >
+                        <materialDesign:PackIcon Kind="Facebook" />
+                    </Button>
+                    <Button x:Name="btnTwitterLink" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Yellow" Margin="0 0 10 0">
+                        <materialDesign:PackIcon Kind="Twitter" />
+                    </Button>
+                    <Button x:Name="btnGithubLink" Click="btnFechar_Click" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Yellow" >
+                        <materialDesign:PackIcon Kind="GithubCircle" />
+                    </Button>
                 </StackPanel>
                 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
-                    <Button x:Name="btnAlert" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" >
+                    <Button x:Name="btnAlert" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Cyan" >
                         <materialDesign:PackIcon Kind="BellOutline" />
                     </Button>
-                    <Button x:Name="btnConfig" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Margin="0 0 10 0">
+                    <Button x:Name="btnConfig" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Cyan" Margin="0 0 10 0">
                         <materialDesign:PackIcon Kind="Settings" />
                     </Button>
-                    <Button x:Name="btnFechar" Click="btnFechar_Click" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" >
+                    <Button x:Name="btnFechar" Click="btnFechar_Click" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Cyan" >
                         <materialDesign:PackIcon Kind="Power" />
                     </Button>
                 </StackPanel>
             
             </Grid>
         </StackPanel>
-        <Grid      Width="250" Background="Black" HorizontalAlignment="Left">
-            <ListView Margin=" 0 100">
+        <Grid      Width="200" Background="Black" HorizontalAlignment="Left" >
+            <ListView Foreground="Yellow" Margin=" 0 100" >
+                <ListViewItem Height="60">
+                    <Grid>
+                        <TextBlock  Text="Perfil" Margin="10 0" FontSize="20" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
+                        <materialDesign:PackIcon Kind="Account"  Height="35" Width="35" VerticalAlignment="Center" Margin="110 0 0 0"/>
+                    </Grid>
+                    
+                </ListViewItem>
+                <ListViewItem Height="60" >
+                    <Grid >
+                        <TextBlock  Text="Tarefa" Margin="10" FontSize="20" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
+                        <materialDesign:PackIcon Kind="Group"  Height="35" Width="35" VerticalAlignment="Center" Margin="110 0 0 0"/>
+                    </Grid>
+
+                </ListViewItem>
+                <ListViewItem Height="60">
+                    <Grid>
+                        <TextBlock  Text="Despesa" Margin="10" FontSize="20" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
+                        <materialDesign:PackIcon Kind="Cash100"  Height="35" Width="35" VerticalAlignment="Center" Margin="110 0 0 0"/>
+                    </Grid>
+
+                </ListViewItem>
                 
+                <ListViewItem Height="60" >
+                    <Grid>
+                        <TextBlock  Text="Dashboard" Margin="10 0" FontSize="18" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
+                        <materialDesign:PackIcon Kind="ViewDashboard"  Height="35" Width="35" VerticalAlignment="Center" Margin="110 0 0 0"/>
+                    </Grid>
+
+                </ListViewItem>
             </ListView>
         </Grid>
     </Grid>
