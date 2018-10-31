@@ -30,6 +30,11 @@ namespace RepEasyDesktop.View
 
         private void ButtonEntrar_Click(object sender, RoutedEventArgs e)
         {
+            Login();
+        }
+
+        private void Login()
+        {
             var messageQueue = SnackbarThree.MessageQueue;
 
             if (String.IsNullOrEmpty(TextBoxCpf.Text))
@@ -56,9 +61,8 @@ namespace RepEasyDesktop.View
             {
                 Task.Factory.StartNew(() => messageQueue.Enqueue("CPF ou senha incorreto"));
             }
-                
         }
-        
+
         private void ButtonCadastrar_Click(object sender, RoutedEventArgs e)
         {
             WindowCadastro cadastro = new WindowCadastro();
@@ -69,6 +73,12 @@ namespace RepEasyDesktop.View
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void KeyPress(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+                Login();
         }
     }
 }

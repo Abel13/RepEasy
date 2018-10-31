@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RepEasyDesktop.View"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="LOGIN" Height="450" Width="400" ResizeMode="NoResize" Background="#FF3F1C4D" Foreground="White" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="LOGIN" Height="450" Width="400" ResizeMode="NoResize" Background="#FF3F1C4D" Foreground="White" WindowStartupLocation="CenterScreen" WindowStyle="None" FocusManager.FocusedElement="{Binding ElementName=TextBoxCpf}" >
     <Grid>
         <Button x:Name="ButtonClose" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Click="ButtonClose_Click">
             <materialDesign:PackIcon Kind="Power"/>
@@ -14,8 +14,8 @@
 
         <StackPanel VerticalAlignment="Center">
             <Image Source="/RepEasyDesktop;component/Assets/Logo.png" Width="100" Margin="0 0 0 50"/>
-            <TextBox x:Name="TextBoxCpf" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11"/>
-            <PasswordBox x:Name="TextBoxSenha" materialDesign:HintAssist.Hint="SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25"/>
+            <TextBox x:Name="TextBoxCpf" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11" KeyDown="KeyPress"/>
+            <PasswordBox x:Name="TextBoxSenha" materialDesign:HintAssist.Hint="SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25" KeyDown="KeyPress"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="ButtonEntrar" Content="ENTRAR" Margin="5" HorizontalAlignment="Center" Click="ButtonEntrar_Click" />
                 <Button x:Name="ButtonCadastrar" Content="CADASTRAR" Style="{StaticResource MaterialDesignFlatButton}" Click="ButtonCadastrar_Click" Margin="5 15"/>
