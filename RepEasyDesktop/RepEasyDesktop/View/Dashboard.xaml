@@ -8,9 +8,8 @@
         mc:Ignorable="d"
         Title="Dashboard"  Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" >
     <Grid Background="#FF3F1C4D" MouseDown="grid_mouseDown">
-        <StackPanel>
+        <StackPanel VerticalAlignment="Top">
             <Grid Background="Black" Height="10"/>
-
             <Grid Margin="5">
 
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
@@ -18,20 +17,23 @@
                     <Button x:Name="btnFacebooklink" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Yellow" >
                         <materialDesign:PackIcon Kind="Facebook" />
                     </Button>
-              
+
                     <Button x:Name="btnGithubLink" Click="btnFechar_Click" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Yellow" >
                         <materialDesign:PackIcon Kind="GithubCircle" />
                     </Button>
                 </StackPanel>
-                
+
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
                     <Button x:Name="btnFechar" Click="btnFechar_Click" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Cyan" >
                         <materialDesign:PackIcon Kind="Power" />
                     </Button>
                 </StackPanel>
-            
+
             </Grid>
         </StackPanel>
+        <Grid x:Name="GridPrincipalDashboard" Margin="200 55 0 0" >
+            
+        </Grid>
         <Grid      Width="200" Background="#FF222222" HorizontalAlignment="Left" >
             <StackPanel>
                 <Image Source="/RepEasyDesktop;component/Assets/Logo.png" Width="100" Margin="0 15 0 50"/>

@@ -44,6 +44,43 @@ namespace RepEasyDesktop.View
             int indice = ListViewMenuLateral.SelectedIndex;
             MoveSelecionadoMenu(indice);
 
+            switch (indice)
+            {
+                case 0:
+                    GridPrincipalDashboard.Children.Clear();
+                    //GridPrincipalDashboard.Children.Add( new UserControlNovaDespesa());
+                    break;
+                case 1:
+                    GridPrincipalDashboard.Children.Clear();
+                    //GridPrincipalDashboard.Children.Add(new UserControlNovaDespesa());
+                    break;
+
+                case 2:
+                    GridPrincipalDashboard.Children.Clear();
+                    GridPrincipalDashboard.Children.Add(new UserControlNovaDespesa());
+                    break;
+                case 3:
+                    GridPrincipalDashboard.Children.Clear();
+                    //GridPrincipalDashboard.Children.Add(new UserControlNovaDespesa());
+                    break;
+                case 4:
+                    GridPrincipalDashboard.Children.Clear();
+                    //GridPrincipalDashboard.Children.Add(new UserControlNovaDespesa());
+                    break;
+                case 5:
+                    GridPrincipalDashboard.Children.Clear();
+                    //GridPrincipalDashboard.Children.Add(new UserControlNovaDespesa());
+                    break;
+                case 6:
+                    GridPrincipalDashboard.Children.Clear();
+                    //GridPrincipalDashboard.Children.Add(new UserControlNovaDespesa());
+                    break;
+                default:
+                    GridPrincipalDashboard.Children.Clear();
+                    //GridPrincipalDashboard.Children.Add(new WindowCadastro());
+                    break;
+            }
+
         }
 
         private void MoveSelecionadoMenu(int indice)
