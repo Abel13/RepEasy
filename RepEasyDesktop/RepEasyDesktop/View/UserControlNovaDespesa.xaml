@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="RepEasyDesktop.View.UserControlNovaDespesa"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RepEasyDesktop.View"
+             mc:Ignorable="d" 
+             xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <dragablz:TabablzControl>
+            <dragablz:TabablzControl.InterTabController>
+                <dragablz:InterTabController/>
+            </dragablz:TabablzControl.InterTabController>
+            <TabItem Header="DESPESA" Foreground="White">
+                <StackPanel HorizontalAlignment="Left" Margin="15">
+                    <TextBox x:Name="TextBoxDescricao" materialDesign:HintAssist.Hint="DESCRIÇÃO" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="25"/>
+                    <TextBox x:Name="TextBoxValor" materialDesign:HintAssist.Hint="VALOR" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="25" />
+                    <DatePicker x:Name="DatePickerNascimento" materialDesign:HintAssist.Hint="DATA" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="5" Width="250"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="ITENS" Foreground="White">
+                <StackPanel HorizontalAlignment="Left" Margin="15">
+                    <ComboBox x:Name="ComboBoxListaCompra" materialDesign:HintAssist.Hint="LISTA DE COMPRA" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="250" HorizontalAlignment="Left" Margin="5"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="TextBoxItem" materialDesign:HintAssist.Hint="ITEM" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="25"/>
+                        <Button x:Name="ButtonIncluirItem" Content="INCLUIR" Margin="5" Click="ButtonIncluirItem_Click"/>
+                    </StackPanel>
+                    <ListView x:Name="ListViewItens">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Width="250" Text="{Binding Path=Descricao}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+                                    <Button x:Name="ButtonDelete" Margin="25 0" Width="60" Click="ButtonDelete_Click">
+                                        <materialDesign:PackIcon Kind="Delete"/>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="PARTICIPANTES">
+                <StackPanel Margin="20">
+                    <Label Content="PARTICIPANTES"/>
+                    <ListView x:Name="ListViewParticipantes" Margin="5" Width="250" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox/>
+                                    <Label Content="{Binding Path=Nome}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </TabItem>
+        </dragablz:TabablzControl>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20" VerticalAlignment="Bottom">
+            <Button Content="CANCELAR" Margin="5" Style="{StaticResource MaterialDesignFlatButton}"/>
+            <Button Content="SALVAR" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

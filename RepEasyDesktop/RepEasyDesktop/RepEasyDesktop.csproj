@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dragablz, Version=0.0.3.203, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dragablz.0.0.3.203\lib\net45\Dragablz.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -72,25 +75,23 @@
     </ApplicationDefinition>
     <Compile Include="Control\ControlCadastroMorador.cs" />
     <Compile Include="Control\ControlLogin.cs" />
+    <Compile Include="Control\ControlNovaDespesa.cs" />
     <Compile Include="Model\Despesa.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Morador.cs" />
     <Compile Include="Model\MoradorDespesa.cs" />
     <Compile Include="Model\Tarefa.cs" />
-    <Compile Include="View\Dashboard.xaml.cs">
-      <DependentUpon>Dashboard.xaml</DependentUpon>
+    <Compile Include="View\UserControlNovaDespesa.xaml.cs">
+      <DependentUpon>UserControlNovaDespesa.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewModel\ViewModelItemCompra.cs" />
     <Compile Include="View\WindowLogin.xaml.cs">
       <DependentUpon>WindowLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WindowCadastro.xaml.cs">
       <DependentUpon>WindowCadastro.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\Dashboard.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -103,6 +104,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\UserControlNovaDespesa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\WindowLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -138,6 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Logo.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
