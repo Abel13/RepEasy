@@ -6,8 +6,8 @@ namespace RepEasyDesktop.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("MoradorDespesa")]
-    public partial class MoradorDespesa
+    [Table("Recebimento")]
+    public partial class Recebimento
     {
         [Key]
         [Column(Order = 0)]
@@ -17,13 +17,9 @@ namespace RepEasyDesktop.Model
         [Key]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Despesa { get; set; }
-
-        public int Responsavel { get; set; }
+        public int Devedor { get; set; }
 
         public decimal Valor { get; set; }
-
-        public virtual Despesa Despesa1 { get; set; }
 
         public virtual Morador Morador1 { get; set; }
 

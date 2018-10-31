@@ -9,7 +9,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <dragablz:TabablzControl>
+        <dragablz:TabablzControl x:Name="TabablzControlDespesa">
             <dragablz:TabablzControl.InterTabController>
                 <dragablz:InterTabController/>
             </dragablz:TabablzControl.InterTabController>
@@ -17,7 +17,7 @@
                 <StackPanel HorizontalAlignment="Left" Margin="15">
                     <TextBox x:Name="TextBoxDescricao" materialDesign:HintAssist.Hint="DESCRIÇÃO" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="25"/>
                     <TextBox x:Name="TextBoxValor" materialDesign:HintAssist.Hint="VALOR" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="25" />
-                    <DatePicker x:Name="DatePickerNascimento" materialDesign:HintAssist.Hint="DATA" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="5" Width="250"/>
+                    <DatePicker x:Name="DatePickerCompra" materialDesign:HintAssist.Hint="DATA" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="5" Width="250"/>
                 </StackPanel>
             </TabItem>
             <TabItem Header="ITENS" Foreground="White">
@@ -48,7 +48,7 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <CheckBox/>
+                                    <CheckBox Click="CheckBox_Click"/>
                                     <Label Content="{Binding Path=Nome}"/>
                                 </StackPanel>
                             </DataTemplate>
@@ -59,7 +59,9 @@
         </dragablz:TabablzControl>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20" VerticalAlignment="Bottom">
             <Button Content="CANCELAR" Margin="5" Style="{StaticResource MaterialDesignFlatButton}"/>
-            <Button Content="SALVAR" Margin="5"/>
+            <Button x:Name="ButtonSalvar" Content="SALVAR" Margin="5" Click="ButtonSalvar_Click"/>
         </StackPanel>
+        <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}"
+                                                x:Name="SnackbarThree" Margin="15"/>
     </Grid>
 </UserControl>

@@ -25,6 +25,7 @@ namespace RepEasyDesktop.View
     {
         ControlNovaDespesa control;
         ObservableCollection<ViewModelItemCompra> itensCompra;
+        List<object> participantes;
 
         public UserControlNovaDespesa()
         {
@@ -33,8 +34,10 @@ namespace RepEasyDesktop.View
             control = new ControlNovaDespesa();
             itensCompra = new ObservableCollection<ViewModelItemCompra>();
 
+            participantes = new List<object>();
+
             ListViewItens.ItemsSource = itensCompra;
-            ListViewParticipantes.ItemsSource = control.CarregarParticipantes();
+            ListViewParticipantes.ItemsSource = control.CarregarParticipantes(); 
         }
 
         private void ButtonIncluirItem_Click(object sender, RoutedEventArgs e)
@@ -51,6 +54,56 @@ namespace RepEasyDesktop.View
         {
             var vm = (ViewModelItemCompra)((Button)sender).DataContext;
             itensCompra.Remove(vm);
+        }
+
+        private void ButtonSalvar_Click(object sender, RoutedEventArgs e)
+        {
+            var messageQueue = SnackbarThree.MessageQueue;
+
+            DateTime dataCompra;
+
+            if (String.IsNullOrEmpty(TextBoxDescricao.Text))
+            {
+                TextBoxDescricao.Focus();
+                Task.Factory.StartNew(() => messageQueue.Enqueue("Informe a descrição da despesa."));
+                return;
+            }
+
+            if (String.IsNullOrEmpty(TextBoxValor.Text))
+            {
+                TextBoxValor.Focus();
+                Task.Factory.StartNew(() => messageQueue.Enqueue("Informe o valor da despesa."));
+                return;
+            }
+
+            if (DatePickerCompra.SelectedDate == null)
+            {
+                DatePickerCompra.Focus();
+                Task.Factory.StartNew(() => messageQueue.Enqueue("Data da compra não informada."));
+                return;
+            }
+            else
+            {
+                dataCompra = DatePickerCompra.SelectedDate.Value;
+            }
+            
+            if(participantes.Count == 0)
+            {
+                TabablzControlDespesa.SelectedIndex = 2;
+                Task.Factory.StartNew(() => messageQueue.Enqueue("Selecione os participantes da despesa."));
+                return;   
+            }
+
+            control.Salvar(TextBoxDescricao.Text, TextBoxValor.Text, dataCompra, ListViewItens.ItemsSource, participantes);
+        }
+
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            bool participa = ((CheckBox)sender).IsChecked ?? false;
+            if (participa)
+                participantes.Add(((CheckBox)sender).DataContext);
+            else
+                participantes.Remove(((CheckBox)sender).DataContext);
         }
     }
 }

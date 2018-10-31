@@ -24,6 +24,8 @@ namespace RepEasyDesktop.Model
 
         public decimal Valor { get; set; }
 
+        public DateTime Data { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MoradorDespesa> MoradorDespesa { get; set; }
 
