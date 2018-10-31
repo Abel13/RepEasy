@@ -81,11 +81,13 @@
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Morador.cs" />
     <Compile Include="Model\MoradorDespesa.cs" />
+    <Compile Include="Model\Recebimento.cs" />
     <Compile Include="Model\Tarefa.cs" />
     <Compile Include="View\UserControlNovaDespesa.xaml.cs">
       <DependentUpon>UserControlNovaDespesa.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ViewModel\ViewModelItemCompra.cs" />
+    <Compile Include="View\ViewModel\ViewModelParticipante.cs" />
     <Compile Include="View\WindowLogin.xaml.cs">
       <DependentUpon>WindowLogin.xaml</DependentUpon>
     </Compile>
