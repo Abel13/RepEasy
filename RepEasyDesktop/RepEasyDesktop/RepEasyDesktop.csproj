@@ -83,6 +83,9 @@
     <Compile Include="Model\MoradorDespesa.cs" />
     <Compile Include="Model\Recebimento.cs" />
     <Compile Include="Model\Tarefa.cs" />
+    <Compile Include="View\Dashboard.xaml.cs">
+      <DependentUpon>Dashboard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControlNovaDespesa.xaml.cs">
       <DependentUpon>UserControlNovaDespesa.xaml</DependentUpon>
     </Compile>
@@ -94,6 +97,10 @@
     <Compile Include="View\WindowCadastro.xaml.cs">
       <DependentUpon>WindowCadastro.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\Dashboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
