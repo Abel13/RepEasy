@@ -76,6 +76,7 @@
     <Compile Include="Control\ControlCadastroMorador.cs" />
     <Compile Include="Control\ControlLogin.cs" />
     <Compile Include="Control\ControlNovaDespesa.cs" />
+    <Compile Include="Control\ControlTarefa.cs" />
     <Compile Include="Model\Despesa.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\Model.cs" />

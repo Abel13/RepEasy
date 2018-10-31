@@ -13,8 +13,14 @@
         <dragablz:TabablzControl.InterTabController>
             <dragablz:InterTabController/>
         </dragablz:TabablzControl.InterTabController>
-        <TabItem Header="TAREFA" Foreground="White">
+        <TabItem Header="Tarefa" Foreground="White">
             <StackPanel HorizontalAlignment="Left">
+                    <TextBox x:Name="TexBoxTituloTarefa" 
+                             materialDesign:HintAssist.Hint="Titulo" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             Width="290" Margin="30,10,0,0" 
+                             MaxLength="25"
+                             HorizontalAlignment="Left"/>
                     <TextBox x:Name="TextBoxDescricaoTarefa"  Style="{StaticResource MaterialDesignTextAreaTextBox}"
                          Margin="30,30,0,0"
                          VerticalAlignment="Top"
@@ -25,50 +31,29 @@
                          VerticalScrollBarVisibility="Auto"
                          materialDesign:HintAssist.Hint="Descrição da tarefa"
                          IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignTextAreaTextBoxEnabledComboBox}" />
-                 <DatePicker x:Name="DatePickerCompra" materialDesign:HintAssist.Hint="DATA" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="30,30,0,0" Width="290"/>
-            </StackPanel>
-        </TabItem>
-        <TabItem Header="MEMBROS DA TAREFA" Foreground="White">
-            <StackPanel HorizontalAlignment="Left" Margin="15">
-                <ComboBox x:Name="ComboBoxListaCompra" materialDesign:HintAssist.Hint="LISTA DE COMPRA" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="250" HorizontalAlignment="Left" Margin="5"/>
-                <StackPanel Orientation="Horizontal">
-                    <TextBox x:Name="TextBoxItem" materialDesign:HintAssist.Hint="ITEM" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="25"/>
-                    <Button x:Name="ButtonIncluirItem" Content="INCLUIR" Margin="5" Click="ButtonIncluirItem_Click"/>
+                 <ComboBox x:Name="ComboBoxListaMorador"  materialDesign:HintAssist.Hint="LISTA DE MORADORES" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="290" HorizontalAlignment="Left" Margin="30,30,0,0"/>
+                
+                <DatePicker x:Name="TextDataTarefa" materialDesign:HintAssist.Hint="DATA" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="30,30,0,0" Width="290"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="120,20,10,0" VerticalAlignment="Bottom">
+                        <Button Content="CANCELAR" Margin="5" Style="{StaticResource MaterialDesignFlatButton}"/>
+                        <Button x:Name="ButtonSalvarTarefa" Content="SALVAR" Margin="5" Click="ButtonSalvarTarefa_Click"/>
                 </StackPanel>
-                <ListView x:Name="ListViewItens">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Width="250" Text="{Binding Path=Descricao}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
-                                <Button x:Name="ButtonDelete" Margin="25 0" Width="60" Click="ButtonDelete_Click">
-                                    <materialDesign:PackIcon Kind="Delete"/>
-                                </Button>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackPanel>
+
+                </StackPanel>
         </TabItem>
-        <TabItem Header="DATAS ">
-            <StackPanel Margin="20">
-                <Label Content="PARTICIPANTES"/>
-                <ListView x:Name="ListViewParticipantes" Margin="5" Width="250" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <CheckBox Click="CheckBox_Click"/>
-                                <Label Content="{Binding Path=Nome}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackPanel>
+            <TabItem Header="Lista de Tarefas" Foreground="White">
+                <StackPanel HorizontalAlignment="Center">
+                    <DataGrid
+                          Height="380"
+                          Width="790"
+                          Margin="0 10 0 0"
+                          ItemsSource="{Binding }"
+                          CanUserSortColumns="True"
+                          CanUserAddRows="False" />
+                </StackPanel>        
         </TabItem>
+        
     </dragablz:TabablzControl>
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="130,50,10,140" VerticalAlignment="Bottom">
-        <Button Content="CANCELAR" Margin="5" Style="{StaticResource MaterialDesignFlatButton}"/>
-        <Button x:Name="ButtonSalvar" Content="SALVAR" Margin="5" Click="ButtonSalvar_Click"/>
-    </StackPanel>
     <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}"
                                                 x:Name="SnackbarThree" Margin="15"/>
     </Grid>

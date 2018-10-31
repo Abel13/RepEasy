@@ -24,5 +24,10 @@ namespace RepEasyDesktop.View
         {
             InitializeComponent();
         }
+
+        private void ButtonSalvarTarefa_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
