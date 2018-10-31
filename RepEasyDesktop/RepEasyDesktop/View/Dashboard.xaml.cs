@@ -38,5 +38,18 @@ namespace RepEasyDesktop.View
         {
 
         }
+
+        private void SelectMenuItem(object sender, SelectionChangedEventArgs e)
+        {
+            int indice = ListViewMenuLateral.SelectedIndex;
+            MoveSelecionadoMenu(indice);
+
+        }
+
+        private void MoveSelecionadoMenu(int indice)
+        {
+            TransicaoSelectedItemMenuLateral.OnApplyTemplate();
+            GridCursor.Margin = new Thickness(0 ,(132 + (60 * indice)),0, 0);
+        }
     }
 }
