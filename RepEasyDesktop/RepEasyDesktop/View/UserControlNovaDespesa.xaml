@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             d:DesignHeight="450" d:DesignWidth="800" Background="#FF3F1C4D">
+             d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <dragablz:TabablzControl>
             <dragablz:TabablzControl.InterTabController>
@@ -25,16 +25,41 @@
                     <ComboBox x:Name="ComboBoxListaCompra" materialDesign:HintAssist.Hint="LISTA DE COMPRA" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="250" HorizontalAlignment="Left" Margin="5"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBox x:Name="TextBoxItem" materialDesign:HintAssist.Hint="ITEM" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="25"/>
-                        <Button Content="INCLUIR" Margin="5"/>
+                        <Button x:Name="ButtonIncluirItem" Content="INCLUIR" Margin="5" Click="ButtonIncluirItem_Click"/>
                     </StackPanel>
-                    <ListView Height="300"/>
+                    <ListView x:Name="ListViewItens">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Width="250" Text="{Binding Path=Descricao}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+                                    <Button x:Name="ButtonDelete" Margin="25 0" Width="60" Click="ButtonDelete_Click">
+                                        <materialDesign:PackIcon Kind="Delete"/>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackPanel>
             </TabItem>
             <TabItem Header="PARTICIPANTES">
-                <StackPanel>
-
+                <StackPanel Margin="20">
+                    <Label Content="PARTICIPANTES"/>
+                    <ListView x:Name="ListViewParticipantes" Margin="5" Width="250" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox/>
+                                    <Label Content="{Binding Path=Nome}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackPanel>
             </TabItem>
         </dragablz:TabablzControl>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20" VerticalAlignment="Bottom">
+            <Button Content="CANCELAR" Margin="5" Style="{StaticResource MaterialDesignFlatButton}"/>
+            <Button Content="SALVAR" Margin="5"/>
+        </StackPanel>
     </Grid>
 </UserControl>

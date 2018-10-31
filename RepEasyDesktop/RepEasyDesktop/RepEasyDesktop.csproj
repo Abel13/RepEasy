@@ -75,6 +75,7 @@
     </ApplicationDefinition>
     <Compile Include="Control\ControlCadastroMorador.cs" />
     <Compile Include="Control\ControlLogin.cs" />
+    <Compile Include="Control\ControlNovaDespesa.cs" />
     <Compile Include="Model\Despesa.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\Model.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="View\UserControlNovaDespesa.xaml.cs">
       <DependentUpon>UserControlNovaDespesa.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewModel\ViewModelItemCompra.cs" />
     <Compile Include="View\WindowLogin.xaml.cs">
       <DependentUpon>WindowLogin.xaml</DependentUpon>
     </Compile>
@@ -145,5 +147,6 @@
   <ItemGroup>
     <Resource Include="Assets\Logo.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

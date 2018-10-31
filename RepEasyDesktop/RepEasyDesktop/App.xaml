@@ -7,17 +7,15 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!-- primary color -->
+                <!--primary color-->
                 <ResourceDictionary>
-                    <!-- include your primary palette -->
+                    <!--include your primary palette-->
                     <ResourceDictionary.MergedDictionaries>
                         <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/MaterialDesignColor.Cyan.xaml" />
                     </ResourceDictionary.MergedDictionaries>
 
-                    <!--
-                            include three hues from the primary palette (and the associated forecolours).
-                            Do not rename, keep in sequence; light to dark.
-                        -->
+                    <!--include three hues from the primary palette (and the associated forecolours).
+                    Do not rename, keep in sequence; light to dark.-->
                     <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="{StaticResource Primary100}"/>
                     <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="{StaticResource Primary100Foreground}"/>
                     <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="{StaticResource Primary500}"/>
@@ -26,24 +24,27 @@
                     <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="{StaticResource Primary700Foreground}"/>
                 </ResourceDictionary>
 
-                <!-- secondary colour -->
+                <!--secondary colour-->
                 <ResourceDictionary>
-                    <!-- include your secondary pallette -->
+                    <!--include your secondary pallette-->
                     <ResourceDictionary.MergedDictionaries>
                         <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/MaterialDesignColor.Cyan.xaml" />
                     </ResourceDictionary.MergedDictionaries>
 
-                    <!-- include a single secondary accent color (and the associated forecolour) -->
+                    <!--include a single secondary accent color (and the associated forecolour)-->
                     <SolidColorBrush x:Key="SecondaryAccentBrush" Color="{StaticResource Accent200}"/>
                     <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="{StaticResource Accent200Foreground}"/>
                 </ResourceDictionary>
 
-                <!-- Include the Dragablz Material Design style -->
+                <!--Include the Dragablz Material Design style-->
                 <ResourceDictionary Source="pack://application:,,,/Dragablz;component/Themes/materialdesign.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Indigo.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <!-- tell Dragablz tab control to use the Material Design theme -->
+            <!--tell Dragablz tab control to use the Material Design theme-->
             <Style TargetType="{x:Type dragablz:TabablzControl}" BasedOn="{StaticResource MaterialDesignTabablzControlStyle}" />
         </ResourceDictionary>
     </Application.Resources>
