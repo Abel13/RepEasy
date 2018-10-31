@@ -14,7 +14,7 @@
             <Grid Margin="5">
 
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                    <TextBlock Text="Repeasy Dashboard" VerticalAlignment="Center" FontSize="25" FontFamily="Segoe UI Black" Margin=" 20 0" Foreground="Cyan"/>
+                    <TextBlock Text="Dashboard" VerticalAlignment="Center" FontSize="28" FontFamily="Arial" Margin=" 20 0" Foreground="Yellow"/>
                     <Button x:Name="btnFacebooklink" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Yellow" >
                         <materialDesign:PackIcon Kind="Facebook" />
                     </Button>
@@ -40,8 +40,11 @@
             
             </Grid>
         </StackPanel>
-        <Grid      Width="200" Background="Black" HorizontalAlignment="Left" >
-            <ListView Foreground="Yellow" Margin=" 0 100" >
+        <Grid      Width="200" Background="#FF222222" HorizontalAlignment="Left" >
+            <StackPanel>
+                <Image Source="/RepEasyDesktop;component/Assets/Logo.png" Width="100" Margin="0 15 0 50"/>
+            </StackPanel>
+            <ListView Foreground="White" Margin="0,130,0,10" >
                 <ListViewItem Height="60">
                     <Grid>
                         <TextBlock  Text="Perfil" Margin="10 0" FontSize="20" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
@@ -51,23 +54,46 @@
                 </ListViewItem>
                 <ListViewItem Height="60" >
                     <Grid >
-                        <TextBlock  Text="Tarefa" Margin="10" FontSize="20" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
+                        <TextBlock  Text="Tarefas" Margin="10" FontSize="20" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
                         <materialDesign:PackIcon Kind="Group"  Height="35" Width="35" VerticalAlignment="Center" Margin="110 0 0 0"/>
                     </Grid>
 
                 </ListViewItem>
                 <ListViewItem Height="60">
                     <Grid>
-                        <TextBlock  Text="Despesa" Margin="10" FontSize="20" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
-                        <materialDesign:PackIcon Kind="Cash100"  Height="35" Width="35" VerticalAlignment="Center" Margin="110 0 0 0"/>
+                        <materialDesign:PackIcon Kind="CashUsd"  Height="35" Width="35" VerticalAlignment="Center" Margin="110 0 0 0"/>
+                        <TextBlock  Text="Despesas" Margin="10" FontSize="20" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
                     </Grid>
 
                 </ListViewItem>
                 
                 <ListViewItem Height="60" >
                     <Grid>
-                        <TextBlock  Text="Dashboard" Margin="10 0" FontSize="18" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
-                        <materialDesign:PackIcon Kind="ViewDashboard"  Height="35" Width="35" VerticalAlignment="Center" Margin="110 0 0 0"/>
+                        <TextBlock  Text="Compras" Margin="10 0" FontSize="18" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
+                        <materialDesign:PackIcon Kind="CartOutline"  Height="35" Width="35" VerticalAlignment="Center" Margin="110 0 0 0"/>
+                    </Grid>
+
+                </ListViewItem>
+
+
+                <ListViewItem Height="60" >
+                    <Grid>
+                        <TextBlock  Text="Relatórios" Margin="10 0" FontSize="18" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
+                        <materialDesign:PackIcon Kind="ChartLine"  Height="35" Width="35" VerticalAlignment="Center" Margin="110 0 0 0"/>
+                    </Grid>
+
+                </ListViewItem>
+                <ListViewItem Height="60" >
+                    <Grid>
+                        <TextBlock  Text="Calendário" Margin="10 0" FontSize="18" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
+                        <materialDesign:PackIcon Kind="CalendarMultiple"  Height="35" Width="35" VerticalAlignment="Center" Margin="110 0 0 0"/>
+                    </Grid>
+
+                </ListViewItem>
+                <ListViewItem Height="60" >
+                    <Grid>
+                        <TextBlock  Text="Relógio" Margin="10 0" FontSize="18" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
+                        <materialDesign:PackIcon Kind="Clock"  Height="35" Width="35" VerticalAlignment="Center" Margin="110 0 0 0"/>
                     </Grid>
 
                 </ListViewItem>
