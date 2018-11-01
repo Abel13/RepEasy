@@ -6,17 +6,17 @@
              xmlns:local="clr-namespace:RepEasyDesktop.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Background="White"
+             
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <Grid>
-        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
-            <Image Width="100" Height="100" Margin="30" HorizontalAlignment="Left"/>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBox x:Name="TextBoxNome" materialDesign:HintAssist.Hint="NOME" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11"/>
             <TextBox x:Name="TextBoxCpf" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11"/>
             <PasswordBox x:Name="TextBoxSenhaAtual" materialDesign:HintAssist.Hint="SENHA ATUAL" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25"/>
             <PasswordBox x:Name="TextBoxSenhaNova" materialDesign:HintAssist.Hint="NOVA SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25"/>
-            <DatePicker/>
-
+            <DatePicker HorizontalAlignment="Left" Width="250" materialDesign:HintAssist.Hint="DATA DE NASCIMENTO" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+            <Button x:Name="ButtonSalvar" Width="125" HorizontalAlignment="Left" />
         </StackPanel>
     </Grid>
 </UserControl>
