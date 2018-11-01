@@ -24,6 +24,8 @@ namespace RepEasyDesktop
         public MainWindow()
         {
             InitializeComponent();
+
+            GridPrincipal.Children.Add(new UserControlNovaDespesa());
         }
     }
 }

@@ -6,21 +6,23 @@ namespace RepEasyDesktop.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ItemDespesa")]
-    public partial class ItemDespesa
+    [Table("Recebimento")]
+    public partial class Recebimento
     {
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Despesa { get; set; }
+        public int Morador { get; set; }
 
         [Key]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Item { get; set; }
+        public int Devedor { get; set; }
 
-        public virtual Despesa Despesa1 { get; set; }
+        public decimal Valor { get; set; }
 
-        public virtual Item Item1 { get; set; }
+        public virtual Morador Morador1 { get; set; }
+
+        public virtual Morador Morador2 { get; set; }
     }
 }

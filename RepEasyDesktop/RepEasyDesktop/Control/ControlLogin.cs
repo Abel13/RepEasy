@@ -21,8 +21,6 @@ namespace RepEasyDesktop.Control
                             select m).FirstOrDefault();
 
             return morador != null;
-
-            //tste
         }
     }
 }

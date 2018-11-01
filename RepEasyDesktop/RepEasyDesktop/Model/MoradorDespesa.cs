@@ -19,10 +19,14 @@ namespace RepEasyDesktop.Model
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Despesa { get; set; }
 
-        public decimal? Valor { get; set; }
+        public int Responsavel { get; set; }
+
+        public decimal Valor { get; set; }
 
         public virtual Despesa Despesa1 { get; set; }
 
         public virtual Morador Morador1 { get; set; }
+
+        public virtual Morador Morador2 { get; set; }
     }
 }

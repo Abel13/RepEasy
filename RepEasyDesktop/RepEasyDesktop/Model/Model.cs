@@ -14,10 +14,9 @@ namespace RepEasyDesktop.Model
 
         public virtual DbSet<Despesa> Despesas { get; set; }
         public virtual DbSet<Item> Itens { get; set; }
-        public virtual DbSet<ItemDespesa> ItensDespesas { get; set; }
         public virtual DbSet<Morador> Moradores { get; set; }
         public virtual DbSet<MoradorDespesa> MoradoresDespesas { get; set; }
-        public virtual DbSet<MoradorTarefa> MoradoresTarefas { get; set; }
+        public virtual DbSet<Recebimento> Recebimentos { get; set; }
         public virtual DbSet<Tarefa> Tarefas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -33,7 +32,8 @@ namespace RepEasyDesktop.Model
             modelBuilder.Entity<Despesa>()
                 .HasMany(e => e.MoradorDespesa)
                 .WithRequired(e => e.Despesa1)
-                .HasForeignKey(e => e.Despesa);
+                .HasForeignKey(e => e.Despesa)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Despesa>()
                 .HasMany(e => e.Item)
@@ -46,7 +46,6 @@ namespace RepEasyDesktop.Model
 
             modelBuilder.Entity<Morador>()
                 .Property(e => e.Nome)
-                .IsFixedLength()
                 .IsUnicode(false);
 
             modelBuilder.Entity<Morador>()
@@ -56,13 +55,31 @@ namespace RepEasyDesktop.Model
 
             modelBuilder.Entity<Morador>()
                 .Property(e => e.Senha)
-                .IsFixedLength()
                 .IsUnicode(false);
 
             modelBuilder.Entity<Morador>()
                 .HasMany(e => e.MoradorDespesa)
                 .WithRequired(e => e.Morador1)
-                .HasForeignKey(e => e.Morador);
+                .HasForeignKey(e => e.Morador)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Morador>()
+                .HasMany(e => e.MoradorDespesa1)
+                .WithRequired(e => e.Morador2)
+                .HasForeignKey(e => e.Responsavel)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Morador>()
+                .HasMany(e => e.Recebimento)
+                .WithRequired(e => e.Morador1)
+                .HasForeignKey(e => e.Devedor)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Morador>()
+                .HasMany(e => e.Recebimento1)
+                .WithRequired(e => e.Morador2)
+                .HasForeignKey(e => e.Morador)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Morador>()
                 .HasMany(e => e.Tarefa)
@@ -70,6 +87,10 @@ namespace RepEasyDesktop.Model
                 .Map(m => m.ToTable("MoradorTarefa").MapLeftKey("Morador").MapRightKey("Tarefa"));
 
             modelBuilder.Entity<MoradorDespesa>()
+                .Property(e => e.Valor)
+                .HasPrecision(5, 2);
+
+            modelBuilder.Entity<Recebimento>()
                 .Property(e => e.Valor)
                 .HasPrecision(5, 2);
 
