@@ -74,7 +74,7 @@
     <Compile Include="Control\ControlLogin.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Morador.cs" />
-    <Compile Include="Model\Sessao.cs" />
+    <Compile Include="Control\Sessao.cs" />
     <Compile Include="View\UserControlPerfil.xaml.cs">
       <DependentUpon>UserControlPerfil.xaml</DependentUpon>
     </Compile>

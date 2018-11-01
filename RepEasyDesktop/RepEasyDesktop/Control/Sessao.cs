@@ -1,10 +1,11 @@
-﻿using System;
+﻿using RepEasyDesktop.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RepEasyDesktop.Model
+namespace RepEasyDesktop.Control
 {
     public class Sessao
     {
@@ -27,6 +28,11 @@ namespace RepEasyDesktop.Model
             }
 
             return instancia;
+        }
+
+        public void InserirMorador(Morador morador)
+        {
+            Morador = morador;
         }
     }
 }
