@@ -76,6 +76,7 @@
     <Compile Include="Control\ControlCadastroMorador.cs" />
     <Compile Include="Control\ControlLogin.cs" />
     <Compile Include="Control\ControlNovaDespesa.cs" />
+    <Compile Include="Control\ControlTarefa.cs" />
     <Compile Include="Model\Despesa.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\Model.cs" />
@@ -88,6 +89,9 @@
     </Compile>
     <Compile Include="View\UserControlNovaDespesa.xaml.cs">
       <DependentUpon>UserControlNovaDespesa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControlTarefa.xaml.cs">
+      <DependentUpon>UserControlTarefa.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ViewModel\ViewModelItemCompra.cs" />
     <Compile Include="View\ViewModel\ViewModelParticipante.cs" />
@@ -114,6 +118,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\UserControlNovaDespesa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControlTarefa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

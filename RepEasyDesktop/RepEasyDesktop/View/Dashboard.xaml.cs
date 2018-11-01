@@ -52,7 +52,7 @@ namespace RepEasyDesktop.View
                     break;
                 case 1:
                     GridPrincipalDashboard.Children.Clear();
-                    //GridPrincipalDashboard.Children.Add(new UserControlNovaDespesa());
+                    GridPrincipalDashboard.Children.Add(new UserControlTarefa());
                     break;
 
                 case 2:
