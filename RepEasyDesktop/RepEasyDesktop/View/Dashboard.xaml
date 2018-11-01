@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:RepEasyDesktop.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Dashboard"  Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" >
+        Title="Dashboard"  Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" 
+        Background="#FF3F1C4D"
+        >
     <Grid Background="#FF3F1C4D" MouseDown="grid_mouseDown">
         <StackPanel VerticalAlignment="Top">
             <Grid Background="Black" Height="10"/>
