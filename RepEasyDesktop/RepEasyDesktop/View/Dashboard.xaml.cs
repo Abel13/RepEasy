@@ -48,7 +48,7 @@ namespace RepEasyDesktop.View
             {
                 case 0:
                     GridPrincipalDashboard.Children.Clear();
-                    //GridPrincipalDashboard.Children.Add( new UserControlNovaDespesa());
+                    GridPrincipalDashboard.Children.Add( new UserControlPerfil());
                     break;
                 case 1:
                     GridPrincipalDashboard.Children.Clear();
