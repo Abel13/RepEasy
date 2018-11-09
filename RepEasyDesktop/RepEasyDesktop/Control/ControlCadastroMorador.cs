@@ -9,13 +9,13 @@ namespace RepEasyDesktop.Control
 {
     public class ControlCadastroMorador
     {
-        public void Salvar(string nome, string cpf, string senha, DateTime data)
+        public bool Cadastrar(string nome, string cpf, string senha, DateTime data)
         {
             Morador morador = new Morador() { Nome = nome, Cpf = cpf, Senha = senha, DataNascimento = data };
             Model.Model m = new Model.Model();
 
             m.Moradores.Add(morador);
-            m.SaveChanges();
+            return m.SaveChanges() > 0;
         }
     }
 }

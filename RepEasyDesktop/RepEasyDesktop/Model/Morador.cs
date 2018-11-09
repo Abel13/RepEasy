@@ -13,6 +13,9 @@ namespace RepEasyDesktop.Model
         public Morador()
         {
             MoradorDespesa = new HashSet<MoradorDespesa>();
+            MoradorDespesa1 = new HashSet<MoradorDespesa>();
+            Recebimento = new HashSet<Recebimento>();
+            Recebimento1 = new HashSet<Recebimento>();
             Tarefa = new HashSet<Tarefa>();
         }
 
@@ -35,6 +38,15 @@ namespace RepEasyDesktop.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MoradorDespesa> MoradorDespesa { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MoradorDespesa> MoradorDespesa1 { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Recebimento> Recebimento { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Recebimento> Recebimento1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tarefa> Tarefa { get; set; }
