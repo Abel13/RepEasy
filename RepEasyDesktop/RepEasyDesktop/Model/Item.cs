@@ -15,7 +15,6 @@ namespace RepEasyDesktop.Model
             Despesa = new HashSet<Despesa>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]
