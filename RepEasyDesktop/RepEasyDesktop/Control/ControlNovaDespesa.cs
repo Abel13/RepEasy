@@ -26,7 +26,7 @@ namespace RepEasyDesktop.Control
             return participantes;
         }
 
-        internal void Salvar(string descricao, string valor, DateTime dataCompra, object itensCompra, object participantes)
+        internal bool Salvar(string descricao, string valor, DateTime dataCompra, object itensCompra, object participantes)
         {
             int totalParticipantes = ((List<object>)participantes).Count;
             decimal valorMorador = decimal.Parse(valor) / totalParticipantes;
@@ -57,7 +57,7 @@ namespace RepEasyDesktop.Control
             };
 
             context.Despesas.Add(despesa);
-            context.SaveChanges();
+            return context.SaveChanges() > 0;
         }
     }
 }

@@ -94,7 +94,11 @@ namespace RepEasyDesktop.View
                 return;   
             }
 
-            control.Salvar(TextBoxDescricao.Text, TextBoxValor.Text, dataCompra, ListViewItens.ItemsSource, participantes);
+            if (control.Salvar(TextBoxDescricao.Text, TextBoxValor.Text, dataCompra, ListViewItens.ItemsSource, participantes))
+            {
+                ControlDashboard.LoadWindow(new UserControlListarDespesa());
+            }
+
         }
 
         private void CheckBox_Click(object sender, RoutedEventArgs e)

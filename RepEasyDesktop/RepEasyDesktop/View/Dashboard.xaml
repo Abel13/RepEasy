@@ -18,7 +18,7 @@
                         <materialDesign:PackIcon Kind="Facebook" />
                     </Button>
 
-                    <Button x:Name="btnGithubLink" Click="btnFechar_Click" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Yellow" >
+                    <Button x:Name="btnGithubLink" Click="btnGithubLink_Click" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Yellow" >
                         <materialDesign:PackIcon Kind="GithubCircle" />
                     </Button>
                 </StackPanel>
