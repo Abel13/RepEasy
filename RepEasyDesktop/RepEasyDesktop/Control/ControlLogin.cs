@@ -17,8 +17,13 @@ namespace RepEasyDesktop.Control
         public bool Logar(string cpf, string senha)
         {
             var morador = (from m in context.Moradores
-                            where m.Cpf.Equals(cpf) && m.Senha.Equals(senha)
-                            select m).FirstOrDefault();
+                           where m.Cpf.Equals(cpf) && m.Senha.Equals(senha)
+                           select m).FirstOrDefault();
+
+            if (morador != null)
+            {
+                Sessao.GetInstancia().InserirMorador(morador);
+            }
 
             return morador != null;
         }

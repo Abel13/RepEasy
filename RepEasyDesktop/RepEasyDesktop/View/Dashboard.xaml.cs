@@ -1,5 +1,4 @@
-﻿using RepEasyDesktop.Control;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,13 +19,9 @@ namespace RepEasyDesktop.View
     /// </summary>
     public partial class Dashboard : Window
     {
-        ControlDashboard control;
-
         public Dashboard()
         {
             InitializeComponent();
-
-            control = new ControlDashboard(this);
         }
 
         private void btnFechar_Click(object sender, RoutedEventArgs e)
@@ -46,12 +41,52 @@ namespace RepEasyDesktop.View
 
         private void SelectMenuItem(object sender, SelectionChangedEventArgs e)
         {
-            control.LoadWindow(ListViewMenuLateral.SelectedIndex);
+            int indice = ListViewMenuLateral.SelectedIndex;
+            MoveSelecionadoMenu(indice);
+
+            switch (indice)
+            {
+                case 0:
+                    GridPrincipalDashboard.Children.Clear();
+                    GridPrincipalDashboard.Children.Add( new UserControlPerfil());
+                    break;
+                case 1:
+                    GridPrincipalDashboard.Children.Clear();
+                    GridPrincipalDashboard.Children.Add(new UserControlTarefa());
+                    break;
+
+                case 2:
+                    GridPrincipalDashboard.Children.Clear();
+                    GridPrincipalDashboard.Children.Add(new UserControlNovaDespesa());
+                    break;
+                case 3:
+                    GridPrincipalDashboard.Children.Clear();
+                    //GridPrincipalDashboard.Children.Add(new UserControlNovaDespesa());
+                    break;
+                case 4:
+                    GridPrincipalDashboard.Children.Clear();
+                    //GridPrincipalDashboard.Children.Add(new UserControlNovaDespesa());
+                    break;
+                case 5:
+                    GridPrincipalDashboard.Children.Clear();
+                    //GridPrincipalDashboard.Children.Add(new UserControlNovaDespesa());
+                    break;
+                case 6:
+                    GridPrincipalDashboard.Children.Clear();
+                    //GridPrincipalDashboard.Children.Add(new UserControlNovaDespesa());
+                    break;
+                default:
+                    GridPrincipalDashboard.Children.Clear();
+                    //GridPrincipalDashboard.Children.Add(new WindowCadastro());
+                    break;
+            }
+
         }
-        
-        private void btnGithubLink_Click(object sender, RoutedEventArgs e)
+
+        private void MoveSelecionadoMenu(int indice)
         {
-            System.Diagnostics.Process.Start("https://github.com/Abel13/RepEasy");
+            TransicaoSelectedItemMenuLateral.OnApplyTemplate();
+            GridCursor.Margin = new Thickness(0 ,(132 + (60 * indice)),0, 0);
         }
     }
 }
