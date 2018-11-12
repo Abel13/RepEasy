@@ -3,6 +3,5 @@ RepEasyDesktop/.vs/
 RepEasyDesktop/RepEasyDesktop/obj/
 RepEasyDesktop/RepEasyDesktop/bin/
 RepEasyDesktop/packages/
-RepEasyDesktop/RepEasyDesktop/App.config
-RepEasyDesktop/RepEasyDatabase/
-RepEasyDesktop/RepEasyDesktop/RepEasyDesktop.csproj
+RepEasyDesktop/RepEasyDatabase/bin/
+RepEasyDesktop/RepEasyDatabase/obj/

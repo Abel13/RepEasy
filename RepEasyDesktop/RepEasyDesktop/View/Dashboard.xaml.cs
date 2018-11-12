@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RepEasyDesktop.Control;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace RepEasyDesktop.View
     /// </summary>
     public partial class Dashboard : Window
     {
+        ControlDashboard control;
+
         public Dashboard()
         {
             InitializeComponent();
+            control = new ControlDashboard(this);
         }
 
         private void btnFechar_Click(object sender, RoutedEventArgs e)
@@ -57,7 +61,7 @@ namespace RepEasyDesktop.View
 
                 case 2:
                     GridPrincipalDashboard.Children.Clear();
-                    GridPrincipalDashboard.Children.Add(new UserControlNovaDespesa());
+                    GridPrincipalDashboard.Children.Add(new UserControlListarDespesa());
                     break;
                 case 3:
                     GridPrincipalDashboard.Children.Clear();
@@ -87,6 +91,11 @@ namespace RepEasyDesktop.View
         {
             TransicaoSelectedItemMenuLateral.OnApplyTemplate();
             GridCursor.Margin = new Thickness(0 ,(132 + (60 * indice)),0, 0);
+        }
+
+        private void btnGithubLink_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
