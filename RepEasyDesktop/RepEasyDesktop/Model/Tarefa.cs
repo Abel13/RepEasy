@@ -15,7 +15,6 @@ namespace RepEasyDesktop.Model
             Morador = new HashSet<Morador>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]

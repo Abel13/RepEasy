@@ -32,8 +32,7 @@ namespace RepEasyDesktop.Model
             modelBuilder.Entity<Despesa>()
                 .HasMany(e => e.MoradorDespesa)
                 .WithRequired(e => e.Despesa1)
-                .HasForeignKey(e => e.Despesa)
-                .WillCascadeOnDelete(false);
+                .HasForeignKey(e => e.Despesa);
 
             modelBuilder.Entity<Despesa>()
                 .HasMany(e => e.Item)
@@ -60,8 +59,7 @@ namespace RepEasyDesktop.Model
             modelBuilder.Entity<Morador>()
                 .HasMany(e => e.MoradorDespesa)
                 .WithRequired(e => e.Morador1)
-                .HasForeignKey(e => e.Morador)
-                .WillCascadeOnDelete(false);
+                .HasForeignKey(e => e.Morador);
 
             modelBuilder.Entity<Morador>()
                 .HasMany(e => e.MoradorDespesa1)
