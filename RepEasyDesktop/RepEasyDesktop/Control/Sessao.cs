@@ -9,7 +9,7 @@ namespace RepEasyDesktop.Control
 {
     public class Sessao
     {
-        public static Sessao instancia;
+        private static Sessao instancia;
         public Morador Morador { get; private set; }
 
 

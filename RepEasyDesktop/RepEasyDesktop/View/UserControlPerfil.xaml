@@ -10,17 +10,31 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" Foreground="White">
 
     <Grid>
-        <StackPanel x:Name="StackPanelPerfil" VerticalAlignment="Top" HorizontalAlignment="Left" DataContext="{Binding Morador}">
-            <TextBlock Text="PERFIL" HorizontalAlignment="Center" FontSize="25" Margin="15" Background="{x:Null}" FontWeight="Bold" Foreground="#FFFFE426"/>
-            <TextBox x:Name="TextBoxNome" Text="{Binding Path=Nome}" materialDesign:HintAssist.Hint="NOME" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11"/>
-            <TextBox x:Name="TextBoxCpf" IsEnabled="False" Text="{Binding Path=Cpf}" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11"/>
-            <PasswordBox x:Name="TextBoxSenhaAtual" materialDesign:HintAssist.Hint="SENHA ATUAL" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25"/>
-            <PasswordBox x:Name="TextBoxSenhaNova" materialDesign:HintAssist.Hint="NOVA SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25"/>
-            <DatePicker x:Name="DatePickerNascimento" Margin="4" HorizontalAlignment="Left" SelectedDate="{Binding Path=DataNascimento,ConverterCulture=pt-br}" Width="250" materialDesign:HintAssist.Hint="DATA DE NASCIMENTO" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-            <Button x:Name="ButtonSalvar" Width="110" Margin="0,5" Content="SALVAR" HorizontalAlignment ="left"  Click="ButtonSalvar_Click"/>
+        <ScrollViewer>
+            <StackPanel Margin="20" x:Name="StackPanelPerfil" VerticalAlignment="Top" HorizontalAlignment="Left" DataContext="{Binding Morador}">
+                <TextBlock Text="PERFIL" HorizontalAlignment="Center" FontSize="25" Margin="15" Background="{x:Null}" FontWeight="Bold" Foreground="#FFFFE426"/>
+                <TextBox x:Name="TextBoxNome" Text="{Binding Path=Nome}" materialDesign:HintAssist.Hint="NOME" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11"/>
+                <TextBox x:Name="TextBoxCpf" IsEnabled="False" Text="{Binding Path=Cpf}" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="11"/>
+                <PasswordBox x:Name="TextBoxSenhaAtual" materialDesign:HintAssist.Hint="SENHA ATUAL" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25"/>
+                <PasswordBox x:Name="TextBoxSenhaNova" materialDesign:HintAssist.Hint="NOVA SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="250" Margin="5" MaxLength="25"/>
+                <DatePicker x:Name="DatePickerNascimento" Margin="4" HorizontalAlignment="Left" SelectedDate="{Binding Path=DataNascimento,ConverterCulture=pt-br}" Width="250" materialDesign:HintAssist.Hint="DATA DE NASCIMENTO" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                <Button x:Name="ButtonSalvar" Width="110" Margin="0,5" Content="SALVAR" HorizontalAlignment ="left"  Click="ButtonSalvar_Click"/>
+                <ListView x:Name="ListViewSaldo">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <GroupBox Width="200" Header="{Binding Path=Nome}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Path=MensagemDivida}"/>
+                                    <TextBlock Text="{Binding Path=Valor}" Foreground="{Binding Path=Cor}" FontSize="15"/>
+                                    <Button x:Name="ButtonReceber" Visibility="{Binding Path=Visibilidade}" Content="Receber" Click="ButtonReceber_Click"/>
+                                </StackPanel>
+                            </GroupBox>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
-            
-        </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
         <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}"
                                                 x:Name="SnackbarThree" Margin="15"/>
     </Grid>

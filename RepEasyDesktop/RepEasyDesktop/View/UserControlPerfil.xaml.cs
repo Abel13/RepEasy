@@ -22,6 +22,8 @@ namespace RepEasyDesktop.View
     public partial class UserControlPerfil : UserControl
     {
         ControlPerfil control;
+        
+        
 
         object Morador { get; set; }
 
@@ -32,7 +34,13 @@ namespace RepEasyDesktop.View
             control = new ControlPerfil();
             Morador = control.GetMorador();
             StackPanelPerfil.DataContext = Morador;
+            Atualizar();
 
+        }
+
+        private void Atualizar()
+        {
+            ListViewSaldo.ItemsSource = control.CarregarSaldo();
         }
 
         private void ButtonSalvar_Click(object sender, RoutedEventArgs e)
@@ -94,6 +102,14 @@ namespace RepEasyDesktop.View
                 return;
             }
             
+        }
+
+       
+        private void ButtonReceber_Click(object sender, RoutedEventArgs e)
+        {
+            WindowReceber receber = new WindowReceber(((Button)sender).DataContext);
+            receber.ShowDialog();
+            Atualizar();
         }
     }
 }

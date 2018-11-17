@@ -105,11 +105,15 @@
     </Compile>
     <Compile Include="View\ViewModel\ViewModelItemCompra.cs" />
     <Compile Include="View\ViewModel\ViewModelParticipante.cs" />
+    <Compile Include="View\ViewModel\ViewModelSaldoMorador.cs" />
     <Compile Include="View\WindowLogin.xaml.cs">
       <DependentUpon>WindowLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WindowCadastro.xaml.cs">
       <DependentUpon>WindowCadastro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WindowReceber.xaml.cs">
+      <DependentUpon>WindowReceber.xaml</DependentUpon>
     </Compile>
     <Page Include="View\Dashboard.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -148,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\WindowCadastro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WindowReceber.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
