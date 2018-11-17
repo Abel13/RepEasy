@@ -21,7 +21,7 @@ namespace RepEasyDesktop.Control
         private void MoveSelecionadoMenu(int indice)
         {
             Dashboard.TransicaoSelectedItemMenuLateral.OnApplyTemplate();
-            Dashboard.GridCursor.Margin = new Thickness(0, (132 + (60 * indice)), 0, 0);
+            Dashboard.GridCursor.Margin = new Thickness(0, (140 + (60 * indice)), 0, 0);
         }
 
         internal void LoadWindow(int selectedIndex)

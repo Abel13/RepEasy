@@ -4,5 +4,6 @@ CREATE TABLE [dbo].[Morador] (
   [Cpf] char(11) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
   [Senha] varchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
   [DataNascimento] date NOT NULL, 
+    [Ativo] BIT NOT NULL DEFAULT 1, 
     CONSTRAINT [PK_Morador] PRIMARY KEY ([Id])
 )
