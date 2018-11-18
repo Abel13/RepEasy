@@ -8,7 +8,7 @@ namespace RepEasyDesktop.Model
     public partial class Model : DbContext
     {
         public Model()
-            : base("name=Azure")
+            : base("name=Context")
         {
         }
 

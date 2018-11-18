@@ -69,7 +69,6 @@
     <Build Include="MoradorDespesa.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="SqlSchemaCompare.scmp" />
     <None Include="RepEasyDatabase.sqlproj.user" />
   </ItemGroup>
   <ItemGroup>
