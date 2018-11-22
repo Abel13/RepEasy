@@ -56,7 +56,7 @@ namespace RepEasyDesktop.View
                     break;
                 case 1:
                     GridPrincipalDashboard.Children.Clear();
-                    GridPrincipalDashboard.Children.Add(new UserControlTarefa());
+                    GridPrincipalDashboard.Children.Add(new UserControlListarTarefa());
                     break;
 
                 case 2:
