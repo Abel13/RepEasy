@@ -8,26 +8,35 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <ListView x:Name="ListViewDespesas" DataContext="{Binding Despesa}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Descricao}" Header="Descricao" />
-                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding Path=Valor}" Header="Total" />
-                    <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Data, ConverterCulture=pt-br, StringFormat={}{0:d}}" Header="Data e Hora" />
-                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding Path=Item.Count}" Header="Qtd Itens" />
-                    <GridViewColumn Width="110" DisplayMemberBinding="{Binding Path=MoradorDespesa.Count}" Header="Participantes" />
-                </GridView>
-            </ListView.View>
+        <Grid Height="30" Background="#FFFFD600" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Width="150" Text="Descrição" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Width="100" Text="Valor" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Width="150" Text="Data" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Width="100" Text="Itens"  FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Width="110" Text="Participantes" FontWeight="Bold" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+        
+        
+        <ListView x:Name="ListViewDespesas" DataContext="{Binding Despesa}" Margin="0 30 0 0">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Button Grid.Column="2"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="150" Text="{Binding Path=Descricao}" VerticalAlignment="Center"/>
+                        <TextBlock Width="100" Text="{Binding Path=Valor}" VerticalAlignment="Center"/>
+                        <TextBlock Width="150" Text="{Binding Path=Data, ConverterCulture=pt-br, StringFormat={}{0:d}}" VerticalAlignment="Center"/>
+                        <TextBlock Width="100" Text="{Binding Path=Item.Count}"  VerticalAlignment="Center"/>
+                        <TextBlock Width="110" Text="{Binding Path=MoradorDespesa.Count}" VerticalAlignment="Center"/>
+                        <Button Margin="5">
+                            <materialDesign:PackIcon Kind="Delete"/>
+                        </Button>
+                    </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20">
-        <Button x:Name="ButtonIncluirDespesa" Click="ButtonIncluirDespesa_Click" Style="{StaticResource MaterialDesignFloatingActionAccentButton}" ToolTip="Incluir Despesa">
-            <materialDesign:PackIcon Kind="Plus" Height="24" Width="24" />
-        </Button>
-        </Grid>
+            <Button x:Name="ButtonIncluirDespesa" Click="ButtonIncluirDespesa_Click" Style="{StaticResource MaterialDesignFloatingActionAccentButton}" ToolTip="Incluir Despesa" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20">
+                <materialDesign:PackIcon Kind="Plus" Height="24" Width="24" />
+            </Button>
     </Grid>
 </UserControl>

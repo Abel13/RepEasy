@@ -9,12 +9,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
     <Grid>
-    <dragablz:TabablzControl x:Name="TabablzControlTarefa">
-        <dragablz:TabablzControl.InterTabController>
-            <dragablz:InterTabController/>
-        </dragablz:TabablzControl.InterTabController>
-        <TabItem Header="Tarefa" Foreground="White">
-            <StackPanel HorizontalAlignment="Left">
+        <dragablz:TabablzControl x:Name="TabablzControlTarefa">
+            <dragablz:TabablzControl.InterTabController>
+                <dragablz:InterTabController/>
+            </dragablz:TabablzControl.InterTabController>
+            <TabItem Header="TAREFA" Foreground="White">
+                <StackPanel HorizontalAlignment="Left">
                     <TextBox x:Name="TexBoxTituloTarefa" 
                              materialDesign:HintAssist.Hint="Titulo" 
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
@@ -32,7 +32,7 @@
                          materialDesign:HintAssist.Hint="Descrição da tarefa"
                          IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignTextAreaTextBoxEnabledComboBox}" />
                     <DatePicker x:Name="TextDataTarefa" materialDesign:HintAssist.Hint="DATA" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="30,30,0,0" Width="290"/>
-                    <ComboBox x:Name="ComboBoxListaMorador"  
+                    <ComboBox Visibility="Collapsed" x:Name="ComboBoxListaMorador"  
                           materialDesign:HintAssist.Hint="LISTA DE MORADORES" 
                           Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
                           Width="290" HorizontalAlignment="Left" 
@@ -47,28 +47,28 @@
                         </ComboBox.ItemTemplate>
                     </ComboBox>
 
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="120,20,10,0" VerticalAlignment="Bottom">
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="PARTICIPANTES">
+                <StackPanel Margin="20">
+                    <ListView x:Name="ListViewParticipantes" Margin="5" Width="250" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox Click="CheckBox_Click"/>
+                                    <Label Content="{Binding Path=Nome}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </TabItem>
+        </dragablz:TabablzControl>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20">
                         <Button Content="CANCELAR" Margin="5" Style="{StaticResource MaterialDesignFlatButton}"/>
                         <Button x:Name="ButtonSalvarTarefa" Content="SALVAR" Margin="5" Click="ButtonSalvarTarefa_Click"/>
-                </StackPanel>
-
-                </StackPanel>
-        </TabItem>
-            <TabItem Header="Lista de Tarefas" Foreground="White">
-                <StackPanel HorizontalAlignment="Center">
-                    <DataGrid
-                          x:Name="DataGridTabelaTarefas"
-                          Height="380"
-                          Width="790"
-                          Margin="0 10 0 0"
-                          ItemsSource="{Binding }"
-                          CanUserSortColumns="True"
-                          CanUserAddRows="False" />
-                </StackPanel>        
-        </TabItem>
-        
-    </dragablz:TabablzControl>
-    <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}"
+                    </StackPanel>
+        <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}"
                                                 x:Name="SnackbarThree" Margin="15"/>
     </Grid>
 </UserControl>

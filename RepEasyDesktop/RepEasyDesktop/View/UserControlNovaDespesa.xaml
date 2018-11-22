@@ -21,29 +21,31 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="ITENS" Foreground="White">
-                <StackPanel HorizontalAlignment="Left" Margin="15">
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="15">
                     <ComboBox x:Name="ComboBoxListaCompra" materialDesign:HintAssist.Hint="LISTA DE COMPRA" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="250" HorizontalAlignment="Left" Margin="5"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBox x:Name="TextBoxItem" materialDesign:HintAssist.Hint="ITEM" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250" Margin="5" MaxLength="25"/>
                         <Button x:Name="ButtonIncluirItem" Content="INCLUIR" Margin="5" Click="ButtonIncluirItem_Click"/>
                     </StackPanel>
-                    <ListView x:Name="ListViewItens">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Width="250" Text="{Binding Path=Descricao}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
-                                    <Button x:Name="ButtonDelete" Margin="25 0" Width="60" Click="ButtonDelete_Click">
-                                        <materialDesign:PackIcon Kind="Delete"/>
-                                    </Button>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                    <StackPanel HorizontalAlignment="Left" Width="350">
+                        <ListView Height="320" x:Name="ListViewItens" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Width="220" Text="{Binding Path=Descricao}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+                                        <Button x:Name="ButtonDelete" Margin="25 0" Width="60" Click="ButtonDelete_Click">
+                                            <materialDesign:PackIcon Kind="Delete"/>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <Button Content="Salvar Como Lista de Compra" HorizontalAlignment="Center" Margin="20"/>
+                    </StackPanel>
                 </StackPanel>
             </TabItem>
             <TabItem Header="PARTICIPANTES">
                 <StackPanel Margin="20">
-                    <Label Content="PARTICIPANTES"/>
                     <ListView x:Name="ListViewParticipantes" Margin="5" Width="250" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
                         <ListView.ItemTemplate>
                             <DataTemplate>

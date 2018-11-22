@@ -26,6 +26,7 @@ namespace RepEasyDesktop.View
         {
             InitializeComponent();
             control = new ControlDashboard(this);
+            this.DataContext = Sessao.GetInstancia();
         }
 
         private void btnFechar_Click(object sender, RoutedEventArgs e)
@@ -56,7 +57,7 @@ namespace RepEasyDesktop.View
                     break;
                 case 1:
                     GridPrincipalDashboard.Children.Clear();
-                    GridPrincipalDashboard.Children.Add(new UserControlTarefa());
+                    GridPrincipalDashboard.Children.Add(new UserControlListarTarefa());
                     break;
 
                 case 2:
@@ -96,6 +97,12 @@ namespace RepEasyDesktop.View
         private void btnGithubLink_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            GridPrincipalDashboard.Children.Clear();
+            ListViewMenuLateral.SelectedIndex = -1;
         }
     }
 }

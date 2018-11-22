@@ -22,14 +22,16 @@ namespace RepEasyDesktop.View
     public partial class UserControlTarefa : UserControl
     {
         ControlTarefa controlTarefa;
-        List<object> moradores;
+        //List<object> moradores;
+        List<object> participantes;
 
         public UserControlTarefa()
         {
             InitializeComponent();
             controlTarefa = new ControlTarefa();
             ComboBoxListaMorador.ItemsSource = controlTarefa.ListarMoradores();
-            moradores = new List<object>();
+            //moradores = new List<object>();
+            participantes = new List<object>();
 
         }
 
@@ -38,11 +40,7 @@ namespace RepEasyDesktop.View
             var messageQueue = SnackbarThree.MessageQueue;
             string titulo = TexBoxTituloTarefa.Text;
             string descricao = TextBoxDescricaoTarefa.Text;
-            DateTime data = TextDataTarefa.SelectedDate.Value;
             
-
-
-
             if (String.IsNullOrEmpty(titulo))
             {
                 TexBoxTituloTarefa.Focus();
@@ -61,8 +59,9 @@ namespace RepEasyDesktop.View
                 Task.Factory.StartNew(() => messageQueue.Enqueue("Data da tarefa não informada."));
                 return;
             } 
+            DateTime data = TextDataTarefa.SelectedDate.Value;
 
-            if( !(controlTarefa.CadastrarTarefa(titulo, descricao, data, moradores)))
+            if( !(controlTarefa.CadastrarTarefa(titulo, descricao, data, participantes)))
             {
                 Task.Factory.StartNew(() => messageQueue.Enqueue("Erro no cadastro, tente novamente!"));
             }
@@ -70,16 +69,25 @@ namespace RepEasyDesktop.View
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            DataGridTabelaTarefas.ItemsSource = controlTarefa.ListarMoradores();
+            ListViewParticipantes.ItemsSource = controlTarefa.ListarMoradores();
         }
 
         private void select_check_morador(object sender, RoutedEventArgs e)
         {
+            //bool participa = ((CheckBox)sender).IsChecked ?? false;
+            //if (participa)
+            //    moradores.Add(((CheckBox)sender).DataContext);
+            //else
+            //    moradores.Remove(((CheckBox)sender).DataContext);
+        }
+
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
             bool participa = ((CheckBox)sender).IsChecked ?? false;
             if (participa)
-                moradores.Add(((CheckBox)sender).DataContext);
+                participantes.Add(((CheckBox)sender).DataContext);
             else
-                moradores.Remove(((CheckBox)sender).DataContext);
+                participantes.Remove(((CheckBox)sender).DataContext);
         }
     }
 }
