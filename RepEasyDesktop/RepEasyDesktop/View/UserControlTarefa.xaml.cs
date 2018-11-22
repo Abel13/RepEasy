@@ -67,11 +67,7 @@ namespace RepEasyDesktop.View
                 Task.Factory.StartNew(() => messageQueue.Enqueue("Erro no cadastro, tente novamente!"));
             }
         }
-
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            DataGridTabelaTarefas.ItemsSource = controlTarefa.ListarMoradores();
-        }
+        
 
         private void select_check_morador(object sender, RoutedEventArgs e)
         {
