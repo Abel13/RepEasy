@@ -8,7 +8,7 @@ namespace RepEasyDesktop.Model
     public partial class Model : DbContext
     {
         public Model()
-            : base("name=Context")
+            : base("name=Azure")
         {
         }
 
@@ -27,7 +27,7 @@ namespace RepEasyDesktop.Model
 
             modelBuilder.Entity<Despesa>()
                 .Property(e => e.Valor)
-                .HasPrecision(5, 2);
+                .HasPrecision(7, 2);
 
             modelBuilder.Entity<Despesa>()
                 .HasMany(e => e.MoradorDespesa)

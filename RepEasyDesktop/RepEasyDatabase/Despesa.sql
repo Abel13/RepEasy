@@ -1,7 +1,7 @@
 CREATE TABLE [dbo].[Despesa] (
   [Id] INT IDENTITY(1,1) NOT NULL,
   [Descricao] NCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-  [Valor] DECIMAL(5,2) NOT NULL,
+  [Valor] DECIMAL(7,2) NOT NULL,
   [Data] DATETIME NOT NULL, 
     CONSTRAINT [PK_Despesa] PRIMARY KEY ([Id])
 )

@@ -23,18 +23,18 @@ namespace RepEasyDesktop.View.ViewModel
             Nome = nome;
             Valor = valor;
 
-            if (valor >= 0)
+            if (valor < 0)
             {
                 MensagemDivida = "Me deve: ";
                 Visibilidade = Visibility.Visible;
                 Cor = new SolidColorBrush(Colors.Green);
+                Valor = valor * -1;
             }
             else
             {
                 MensagemDivida = "Devo: ";
                 Visibilidade = Visibility.Collapsed;
                 Cor = new SolidColorBrush(Colors.Red);
-                Valor = valor * -1;
             }
         }
 

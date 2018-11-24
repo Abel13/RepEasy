@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:RepEasyDesktop.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Dashboard"  Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="#FF3F1C4D">
+        Title="Dashboard"  Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="#FF3F1C4D" FontFamily="Nirmala UI Semilight" >
     <Grid Background="#FF3F1C4D" MouseDown="grid_mouseDown">
         <StackPanel VerticalAlignment="Top">
             <Grid Background="Black" Height="10"/>
             <Grid Margin="5">
 
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                    <TextBlock Text="Dashboard" VerticalAlignment="Center" FontSize="28" FontFamily="Arial" Margin=" 20 0" Foreground="#FFFFE426" FontWeight="Bold"/>
+                    <TextBlock Text="Dashboard" VerticalAlignment="Center" FontSize="28" Margin=" 20 0" Foreground="#FFFFE426" FontWeight="Bold"/>
                     <Button x:Name="btnFacebooklink" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Yellow" >
                         <materialDesign:PackIcon Kind="Facebook" />
                     </Button>
@@ -32,71 +32,65 @@
             </Grid>
         </StackPanel>
         <Grid x:Name="GridPrincipalDashboard" Margin="200 55 0 0" >
-            
+
         </Grid>
-        <Grid      Width="200" Background="#FF222222" HorizontalAlignment="Left" >
-            <StackPanel>
-                <Image Source="/RepEasyDesktop;component/Assets/Logo.png" Width="100" Margin="0 15 0 50"/>
-            </StackPanel>
-            <materialDesign:TransitioningContent x:Name="TransicaoSelectedItemMenuLateral" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
-                <Grid x:Name="GridCursor" VerticalAlignment="top" Margin="0 132 0 0" HorizontalAlignment="Left" Width="14" Height="55" Background="#FFFFE426"/>
-            </materialDesign:TransitioningContent>
-                
-            
-            <ListView x:Name="ListViewMenuLateral" SelectionChanged="SelectMenuItem" Foreground="White" Margin="0,130,0,10" >
-                <ListViewItem Height="60">
-                    <Grid>
-                        <TextBlock  Text="Perfil" Margin="20 0" FontSize="20" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
-                        <materialDesign:PackIcon Kind="Account"  Height="35" Width="35" VerticalAlignment="Center" Margin="125 0 0 0"/>
-                    </Grid>
-                    
-                </ListViewItem>
-                <ListViewItem Height="60" >
-                    <Grid >
-                        <TextBlock  Text="Tarefas" Margin="20 0" FontSize="20" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
-                        <materialDesign:PackIcon Kind="Buffer"  Height="35" Width="35" VerticalAlignment="Center" Margin="125 0 0 0"/>
-                    </Grid>
+        <StackPanel Width="200" Background="#FF222222" HorizontalAlignment="Left" >
 
+            <Image Source="/RepEasyDesktop;component/Assets/Logo.png" Width="100" Margin="0 20 0 20"/>
+
+            <ListView x:Name="ListViewMenuLateral" SelectionChanged="SelectMenuItem" Foreground="White">
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Account"  Height="24" Width="24" Margin="10"/>
+                        <TextBlock  Text="Perfil" FontSize="12" VerticalAlignment="Center"/>
+                    </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="60">
-                    <Grid>
-                        <materialDesign:PackIcon Kind="CashUsd"  Height="35" Width="35" VerticalAlignment="Center" Margin="125 0 0 0"/>
-                        <TextBlock  Text="Despesas" Margin="20 0" FontSize="20" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
-                    </Grid>
-
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Buffer"  Height="24" Width="24" Margin="10"/>
+                        <TextBlock  Text="Tarefas" FontSize="12" VerticalAlignment="Center"/>
+                    </StackPanel>
                 </ListViewItem>
-                
-                <ListViewItem Height="60" >
-                    <Grid>
-                        <TextBlock  Text="Compras" Margin="20 0" FontSize="18" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
-                        <materialDesign:PackIcon Kind="CartOutline"  Height="35" Width="35" VerticalAlignment="Center" Margin="125 0 0 0"/>
-                    </Grid>
-
-                </ListViewItem>
-
-
-                <ListViewItem Height="60" >
-                    <Grid>
-                        <TextBlock  Text="Relatórios" Margin="20 0" FontSize="18" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
-                        <materialDesign:PackIcon Kind="ChartLine"  Height="35" Width="35" VerticalAlignment="Center" Margin="125 0 0 0"/>
-                    </Grid>
-
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="CashUsd"  Height="24" Width="24" VerticalAlignment="Center" Margin="10"/>
+                        <TextBlock  Text="Despesas" FontSize="12" VerticalAlignment="Center"/>
+                    </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="60" >
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="CartOutline"  Height="24" Width="24" VerticalAlignment="Center" Margin="10"/>
+                        <TextBlock  Text="Compras" Margin="20,0" FontSize="12" VerticalAlignment="Center" FontFamily="Nirmala UI Semilight" />
+                    </StackPanel>
+
+                </ListViewItem>
+
+
+                <ListViewItem Height="60" >
                     <Grid>
-                        <TextBlock  Text="Calendário" Margin="20 0" FontSize="18" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
-                        <materialDesign:PackIcon Kind="CalendarMultiple"  Height="35" Width="35" VerticalAlignment="Center" Margin="125 0 0 0"/>
+                        <TextBlock  Text="Relatórios" Margin="20,0" FontSize="12" VerticalAlignment="Center" FontFamily="Nirmala UI Semilight" />
+                        <materialDesign:PackIcon Kind="ChartLine"  Height="24" Width="24" VerticalAlignment="Center" Margin="125 0 0 0"/>
                     </Grid>
 
                 </ListViewItem>
                 <ListViewItem Height="60" >
                     <Grid>
-                        <TextBlock  Text="Configurações" Margin="20 0" FontSize="15" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
-                        <materialDesign:PackIcon Kind="Fingerprint"  Height="35" Width="35" VerticalAlignment="Center" Margin="125 0 0 0"/>
+                        <TextBlock  Text="Calendário" Margin="20,0" FontSize="12" VerticalAlignment="Center" FontFamily="Nirmala UI Semilight" />
+                        <materialDesign:PackIcon Kind="CalendarMultiple"  Height="24" Width="24" VerticalAlignment="Center" Margin="125 0 0 0"/>
+                    </Grid>
+
+                </ListViewItem>
+                <ListViewItem Height="60" FontFamily="Leelawadee UI Semilight" >
+                    <Grid>
+                        <TextBlock  Text="Configurações" Margin="20,0" FontSize="12" VerticalAlignment="Center" FontFamily="Nirmala UI Semilight" />
+                        <materialDesign:PackIcon Kind="Settings"  Height="24" Width="24" VerticalAlignment="Center" Margin="125 0 0 0"/>
                     </Grid>
 
                 </ListViewItem>
             </ListView>
-        </Grid>
+        </StackPanel>
+        <materialDesign:TransitioningContent HorizontalAlignment="Left" x:Name="TransicaoSelectedItemMenuLateral" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
+            <Grid x:Name="GridCursor" VerticalAlignment="top" Margin="0 140 0 0" HorizontalAlignment="Left" Width="5" Height="60" Background="#FFFFE426"/>
+        </materialDesign:TransitioningContent>
     </Grid>
 </Window>

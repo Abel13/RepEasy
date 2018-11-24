@@ -56,7 +56,7 @@ namespace RepEasyDesktop.View
                     break;
                 case 1:
                     GridPrincipalDashboard.Children.Clear();
-                    GridPrincipalDashboard.Children.Add(new UserControlTarefa());
+                    GridPrincipalDashboard.Children.Add(new UserControlListarTarefa());
                     break;
 
                 case 2:
@@ -90,7 +90,7 @@ namespace RepEasyDesktop.View
         private void MoveSelecionadoMenu(int indice)
         {
             TransicaoSelectedItemMenuLateral.OnApplyTemplate();
-            GridCursor.Margin = new Thickness(0 ,(132 + (60 * indice)),0, 0);
+            GridCursor.Margin = new Thickness(0 ,(140 + (60 * indice)),0, 0);
         }
 
         private void btnGithubLink_Click(object sender, RoutedEventArgs e)

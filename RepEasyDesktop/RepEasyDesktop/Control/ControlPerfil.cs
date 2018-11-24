@@ -83,16 +83,12 @@ namespace RepEasyDesktop.Control
                 var dado1 = (from s in context.Recebimentos
                              where s.Morador1.Id.Equals(id) && s.Morador2.Id.Equals(saldoMorador.IdDevedor)
                             select s).FirstOrDefault();
-
-
-                dado1.Valor += valor;
+                dado1.Valor -= valor;
 
                 var dado2 = (from s in context.Recebimentos
                             where s.Morador1.Id.Equals(saldoMorador.IdDevedor) && s.Morador2.Id.Equals(id)
                             select s).FirstOrDefault();
-
-
-                dado2.Valor -= valor;
+                dado2.Valor += valor;
 
                 context.SaveChanges();
             }

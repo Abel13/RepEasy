@@ -25,15 +25,13 @@ namespace RepEasyDesktop.Control
 
             return context.SaveChanges() > 0;
         }
-
-
         public List<Morador> ListarMoradores()
         {
-            var listaMoradores = (from m in context.Moradores
-                                  select m).ToList();
+            var listaMorador = (from m in context.Moradores select m).ToList();
+            return listaMorador;
 
-            return listaMoradores;
         }
+
     }
 
 
