@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Height="110" Width="350" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
-    
-    <Grid>
-        <TextBox x:Name="TextBoxValor" materialDesign:HintAssist.Hint="Valor" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="11" VerticalAlignment="Top" Height="50" FontSize="25" />
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+
+    <Grid Background="#FF222222">
+        <TextBox x:Name="TextBoxValor" materialDesign:HintAssist.Hint="Valor" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="11" VerticalAlignment="Top" Height="50" FontSize="25" Foreground="White" />
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" >
             <Button x:Name="ButtonConfirmar" Content="CONFIRMAR" Margin="5" Click="ButtonConfirmar_Click" Width="150"/>
             <Button x:Name="ButtonCancelar" Content="CANCELAR" Click="ButtonCancelar_Click" Style="{StaticResource MaterialDesignFlatButton}" Width="150" Margin="35,0"/>
-            
+            <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" x:Name="SnackbarThree" Margin="15"/>
         </StackPanel>
     </Grid>
 </Window>
