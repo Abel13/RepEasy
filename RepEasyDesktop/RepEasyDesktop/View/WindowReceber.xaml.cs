@@ -20,7 +20,7 @@ namespace RepEasyDesktop.View
     /// </summary>
     public partial class WindowReceber : Window
     {
-        double valor;
+        
 
         ControlPerfil control;
 
@@ -35,6 +35,17 @@ namespace RepEasyDesktop.View
 
         private void ButtonConfirmar_Click(object sender, RoutedEventArgs e)
         {   
+            decimal valor = decimal.Parse(TextBoxValor.Text);
+            var messageQueue = SnackbarThree.MessageQueue;
+
+
+            if (String.IsNullOrEmpty(TextBoxValor.Text))
+            {
+                TextBoxValor.Focus();
+                Task.Factory.StartNew(() => messageQueue.Enqueue("Valor não informado"));
+                return;
+            }
+
             control.Receber(decimal.Parse(TextBoxValor.Text), Recebimento);
             this.Close();
         }
