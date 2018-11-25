@@ -20,11 +20,15 @@ namespace RepEasyDesktop.Control
         }
 
 
-        public List<Tarefa> ListarTarefas()
+        public ICollection<Tarefa> ListarTarefas()
         {
-            var listaTarefas = (from t in context.Tarefas select t).ToList();
-            return listaTarefas;
+            var Morador = Sessao.GetInstancia().Morador;
 
+            var listaTarefas = (from t in context.Moradores
+                                where t.Id.Equals(Morador.Id)
+                                select t.Tarefa).ToList();
+
+            return listaTarefas[0];
         }
 
         public void NovaTarefa()

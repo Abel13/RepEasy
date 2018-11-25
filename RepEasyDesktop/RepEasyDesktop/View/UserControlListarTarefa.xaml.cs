@@ -27,7 +27,7 @@ namespace RepEasyDesktop.View
             InitializeComponent();
             control = new ControlListarTarefa();
 
-            ListViewTarefas.ItemsSource = control.GetDespesas();
+            ListViewTarefas.ItemsSource = control.ListarTarefas();
         }
 
         private void ButtonIncluirTarefa_Click(object sender, RoutedEventArgs e)
