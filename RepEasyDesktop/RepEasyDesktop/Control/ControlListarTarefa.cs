@@ -8,19 +8,26 @@ using System.Threading.Tasks;
 
 namespace RepEasyDesktop.Control
 {
-    public class ControlListarTarefa
+    class ControlListarTarefa
     {
-        public List<Tarefa> GetDespesas()
+        Model.Model context;
+
+
+        public ControlListarTarefa()
         {
-            using (var context = new Model.Model())
-            {
-                return (from d in context.Tarefas
-                        orderby d.Data descending
-                        select d).ToList();
-            }
+            context = new Model.Model();
+
         }
 
-        internal void NovaTarefa()
+
+        public List<Tarefa> ListarTarefas()
+        {
+            var listaTarefas = (from t in context.Tarefas select t).ToList();
+            return listaTarefas;
+
+        }
+
+        public void NovaTarefa()
         {
             ControlDashboard.LoadWindow(new UserControlTarefa());
         }
