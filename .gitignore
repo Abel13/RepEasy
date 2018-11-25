@@ -6,3 +6,5 @@ RepEasyDesktop/packages/
 RepEasyDesktop/RepEasyDatabase/bin/
 RepEasyDesktop/RepEasyDatabase/obj/
 .vs/
+RepEasyDesktop/RepEasyDatabase/RepEasyDatabase.jfm
+RepEasyDesktop/RepEasyDatabase/RepEasyDatabase.dbmdl
